@@ -1,11 +1,8 @@
 //ID ALBUM
-const API = "https://striveschool-api.herokuapp.com/api/deezer/album/75621062"
-
 const paramsString = window.location.search
-
 const params = new URLSearchParams(paramsString)
-
 const albumId = params.get("id")
+
 console.log(albumId)
 
 const albumCover = document.getElementById("album-cover")
@@ -19,7 +16,7 @@ const albumDate = document.getElementById("album-date")
 const albumSongs = document.getElementById("album-songs")
 
 const fetchAlbumData = (id) => {
-  fetch(API)
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
     .then((res) => {
       if (res.ok) {
         return res.json()
@@ -32,6 +29,7 @@ const fetchAlbumData = (id) => {
       //header
       albumCover.src = album.cover_big
       albumTitle.textContent = album.title
+
       //artista
       albumDetails.innerHTML = `<b>${album.artist.name}</b> • ${
         album.release_date
@@ -41,7 +39,7 @@ const fetchAlbumData = (id) => {
       artistImg.src = album.artist.picture_small
 
       //nome artista cliccabile che rimanda alla pagina artist.html
-      albumArtist.addEventListener("click", () => {
+      albumDetails.addEventListener("click", () => {
         window.location.assign(`artist.html?id=${album.artist.id}`)
       })
       // Pulisco liste
@@ -91,4 +89,4 @@ const fetchAlbumData = (id) => {
     })
     .catch((err) => {})
 }
-fetchAlbumData()
+fetchAlbumData(albumId || 75621062)

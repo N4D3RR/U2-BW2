@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <!-- CON G-0 TOGLIAMO IL GAP E NON SFORA -->
@@ -268,21 +269,21 @@
           <div class="col col-4">
             <img id="album-cover" src="" alt="album cover" class="img-fluid" />
           </div>
-          <div class="col col-8">
+          <div class="col col-8 d-flex flex-column justify-content-end">
             <p class="small">ALBUM</p>
-            <h1 id="album-title">CIAO</h1>
-            <div class="d-flex flex-grow-1">
-              <img
-                src="#"
-                alt="artist logo"
-                id="artist-img"
-                class="rounded-circle"
-              />
-              <p id="album-artist">Artista</p>
-
-              <p id="album-date">Anno</p>
-
-              <p id="album-songs">Brani</p>
+            <h1 id="album-title" class="display-5 fw-bold"></h1>
+            <div class="d-flex align-items-baseline">
+              <div id="logoArtista" class="col col-1">
+                <img
+                  src="#"
+                  alt="artist logo"
+                  id="artist-img"
+                  class="rounded-circle img-fluid"
+                />
+              </div>
+              <div>
+                <p id="album-details"></p>
+              </div>
             </div>
           </div>
         </div>

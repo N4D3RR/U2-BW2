@@ -337,14 +337,14 @@
         </div>
         <div class="container">
           <h2 class="my-4 fw-bold">Buonasera</h2>
-          <div class="row row-cols-1 row-cols-md-3 flex-grow-1 flex-grid">
+          <div class="row row-cols-1 row-cols-md-3 flex-grow-1">
             <div class="col">
-              <div class="card mb-3">
+              <div class="card mb-3 text-center">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img
                       src="./assets/imgs/main/image-2.jpg"
-                      class="img-fluid rounded-start"
+                      class="img-fluid rounded-start w-100"
                       alt="Card title"
                     />
                   </div>
@@ -355,12 +355,12 @@
                   </div>
                 </div>
               </div>
-              <div class="card mb-3">
+              <div class="card mb-3 text-center">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img
                       src="./assets/imgs/main/image-5.jpg"
-                      class="img-fluid rounded-start"
+                      class="img-fluid rounded-start w-100"
                       alt="Card title"
                     />
                   </div>
@@ -373,12 +373,12 @@
               </div>
             </div>
             <div class="col">
-              <div class="card mb-3">
+              <div class="card mb-3 text-center">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img
                       src="./assets/imgs/main/image-13.jpg"
-                      class="img-fluid rounded-start"
+                      class="img-fluid rounded-start w-100"
                       alt="Card title"
                     />
                   </div>
@@ -389,12 +389,12 @@
                   </div>
                 </div>
               </div>
-              <div class="card mb-3">
+              <div class="card mb-3 text-center">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img
                       src="./assets/imgs/main/image-8.jpg"
-                      class="img-fluid rounded-start"
+                      class="img-fluid rounded-start w-100"
                       alt="Card title"
                     />
                   </div>
@@ -407,12 +407,12 @@
               </div>
             </div>
             <div class="col">
-              <div class="card mb-3">
+              <div class="card mb-3 text-center">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img
                       src="./assets/imgs/main/image-7.jpg"
-                      class="img-fluid rounded-start"
+                      class="img-fluid rounded-start w-100"
                       alt="Card title"
                     />
                   </div>
@@ -423,12 +423,12 @@
                   </div>
                 </div>
               </div>
-              <div class="card mb-3">
+              <div class="card mb-3 text-center">
                 <div class="row g-0">
                   <div class="col-md-4">
                     <img
                       src="./assets/imgs/main/image-19.jpg"
-                      class="img-fluid rounded-start"
+                      class="img-fluid rounded-start w-100"
                       alt="Card title"
                     />
                   </div>
@@ -443,14 +443,14 @@
           </div>
         </div>
         <!--  altri consigli -->
-        <div class="container">
+        <div class="container d-flex flex-column">
           <div class="d-flex justify-content-between align-items-center">
             <h4 class="my-4 fw-bold">Altro di ciò che ti piace</h4>
             <a>VISUALIZZA TUTTO</a>
           </div>
-          <div class="row row-cols-5">
+          <div class="row row-cols-1 row-cols-md-5">
             <div class="col">
-              <div class="card bg-dark text-white p-3">
+              <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
                   src="./assets/imgs/main/image-16.jpg"
@@ -465,7 +465,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card bg-dark text-white p-3">
+              <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
                   src="./assets/imgs/main/image-3.jpg"
@@ -482,7 +482,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card bg-dark text-white p-3">
+              <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
                   src="./assets/imgs/main/image-10.jpg"
@@ -495,7 +495,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card bg-dark text-white p-3">
+              <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
                   src="./assets/imgs/main/image-17.jpg"
@@ -508,7 +508,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card bg-dark text-white p-3">
+              <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
                   src="./assets/imgs/main/image-9.jpg"
@@ -606,21 +606,26 @@
           </div>
         </div>
         <div class="d-flex flex-column">
-          <div>
+          <div class="d-flex">
             <button class="btn btn-link text-white">
-              <i class="bi bi-shuffle"></i>
+              <i class="bi bi-shuffle fs-5"></i>
             </button>
             <button class="btn btn-link text-white">
-              <i class="bi bi-skip-start-fill"></i>
+              <i class="bi bi-skip-start-fill fs-5"></i>
+            </button>
+            <button class="btn btn-link text-white pb-3">
+              <i
+                class="bi bi-play-fill fs-2 bg-light rounded-5 p-3 text-dark"
+              ></i>
+              <i
+                class="bi bi-pause-fill fs-2 bg-light rounded-5 p-3 text-dark d-none"
+              ></i>
             </button>
             <button class="btn btn-link text-white">
-              <i class="bi bi-play-fill"></i>
+              <i class="bi bi-skip-end-fill fs-5"></i>
             </button>
             <button class="btn btn-link text-white">
-              <i class="bi bi-skip-end-fill"></i>
-            </button>
-            <button class="btn btn-link text-white">
-              <i class="bi bi-repeat"></i>
+              <i class="bi bi-repeat fs-5"></i>
             </button>
           </div>
           <div
@@ -640,7 +645,7 @@
             <span class="small">3:20</span>
           </div>
         </div>
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center d-none d-md-flex">
           <button class="btn btn-link text-white">
             <i class="bi bi-mic"></i>
           </button>

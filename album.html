@@ -32,7 +32,7 @@
           <li class="nav-item">
             <a
               class="nav-link d-flex align-items-center gap-2 text-white"
-              href="#"
+              href="index.html"
               ><i class="bi bi-house-door-fill me-2"></i>Home</a
             >
           </li>
@@ -256,66 +256,103 @@
       <main
         class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1 overflow-auto pb-5"
       >
-        <div
-          class="d-flex justify-content-between align-items-center py-2 d-none d-md-flex px-3 bg-warning"
-        >
-          <div>
-            <i class="bi bi-chevron-left rounded-5 p-1 bg-black me-2"></i>
-            <i class="bi bi-chevron-right rounded-5 p-1 bg-black"></i>
-          </div>
-        </div>
-        <!-- HEADER -->
-        <div class="row bg-black bg-gradient mx-3 py-4" id="album-header">
-          <div class="col col-4">
-            <img id="album-cover" src="" alt="album cover" class="img-fluid" />
-          </div>
-          <div class="col col-8 d-flex flex-column justify-content-end">
-            <p class="small">ALBUM</p>
-            <h1 id="album-title" class="display-5 fw-bold"></h1>
-            <div class="d-flex align-items-baseline">
-              <div id="logoArtista" class="col col-1">
+        <!-- HEADER ALBUM -->
+        <div class="bg-success bg-gradient">
+          <div
+            class="d-flex justify-content-between align-items-center my-2 d-none d-md-flex px-3"
+          >
+            <div>
+              <i class="bi bi-chevron-left rounded-5 p-1 bg-black me-2"></i>
+              <i class="bi bi-chevron-right rounded-5 p-1 bg-black"></i>
+            </div>
+            <div class="dropdown">
+              <button
+                class="btn rounded-5 btn-dark bg-black dropdown-toggle p-0 ps-1 pe-2 py-1"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
                 <img
-                  src="#"
-                  alt="artist logo"
-                  id="artist-img"
-                  class="rounded-circle img-fluid"
+                  src="https://placecats.com/25/25"
+                  alt="user-logo"
+                  class="rounded-5"
                 />
-              </div>
-              <div>
-                <p id="album-details"></p>
+                <small class="fw-bold">(Pupo) Enzo Ghinazzi...</small>
+              </button>
+              <ul class="dropdown-menu bg-black">
+                <li><a class="dropdown-item text-light" href="#">Action</a></li>
+                <li>
+                  <a class="dropdown-item text-light" href="#"
+                    >Another action</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-light" href="#"
+                    >Something else here</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- HEADER DETTAGLI ALBUM -->
+          <div class="row mx-3 py-4" id="album-header">
+            <div class="col col-4">
+              <img
+                id="album-cover"
+                src=""
+                alt="album cover"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col col-8 d-flex flex-column justify-content-end">
+              <p class="small">ALBUM</p>
+              <h1 id="album-title" class="display-5 fw-bold"></h1>
+              <div class="d-flex align-items-baseline">
+                <div id="logoArtista" class="col col-1">
+                  <img
+                    src="#"
+                    alt="artist logo"
+                    id="artist-img"
+                    class="rounded-circle img-fluid"
+                  />
+                </div>
+                <div>
+                  <p id="album-details"></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row ms-3">
-          <div class="col">
-            <div>
+        <!-- FINE HEADER -->
+
+        <!-- SEZIONE TRACCE -->
+        <div class="bg-black bg-gradient">
+          <div class="row ms-3">
+            <div class="col">
               <div class="row mt-3 d-block">
-                <i class="bi bi-play-circle-fill text-white py-0 fs-3"></i>
-                <i class="bi bi-heart text-white py-0 fs-3"></i>
-                <i class="bi bi-arrow-down-circle text-white py-0 fs-3"></i>
+                <i class="bi bi-play-circle-fill text-white py-0 fs-3 me-3"></i>
+                <i class="bi bi-heart text-white py-0 fs-3 me-3"></i>
+                <i
+                  class="bi bi-arrow-down-circle text-white py-0 fs-3 me-3"
+                ></i>
                 <i class="bi bi-three-dots text-white py-0 fs-3"></i>
               </div>
             </div>
           </div>
-        </div>
-        <div class="container mt-2">
-          <div class="row mx-2 mt-4 small">
-            <div class="col-7 p-0">
-              # TITOLO
-              <hr class="px-0" />
-              <ol id="track-list"></ol>
+
+          <div class="container mt-3">
+            <!-- intestazioni -->
+            <div
+              class="row mx-2 small text-secondary fw-bold align-items-center"
+            >
+              <div class="col-7"># TITOLO</div>
+              <div class="col-4 text-end">RIPRODUZIONI</div>
+              <div class="col-1 text-end"><i class="bi bi-clock"></i></div>
             </div>
-            <div class="col-4 p-0">
-              RIPRODUZIONI
-              <hr class="px-0" />
-              <ul id="views" class="list-unstyled"></ul>
-            </div>
-            <div class="col-1 px-0">
-              <i class="bi bi-clock"></i>
-              <hr />
-              <ul id="duration" class="list-unstyled"></ul>
-            </div>
+
+            <!-- qui il JS inserirà le tracce -->
+            <div id="track-list" class="mx-2 mt-2 mb-5"></div>
           </div>
         </div>
       </main>

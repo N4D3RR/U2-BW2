@@ -1,92 +1,92 @@
-//ID ALBUM
-const paramsString = window.location.search
-const params = new URLSearchParams(paramsString)
-const albumId = params.get("id")
+// ID ALBUM
+const paramsString = window.location.search;
+const params = new URLSearchParams(paramsString);
+const albumId = params.get("id");
 
-console.log(albumId)
+console.log(albumId);
 
-const albumCover = document.getElementById("album-cover")
-const albumTitle = document.getElementById("album-title")
-const albumDetails = document.getElementById("album-details")
-const trackList = document.getElementById("track-list")
-const viewsList = document.getElementById("views")
-const durationList = document.getElementById("duration")
-const artistImg = document.getElementById("artist-img")
-const albumDate = document.getElementById("album-date")
-const albumSongs = document.getElementById("album-songs")
+const albumCover = document.getElementById("album-cover");
+const albumTitle = document.getElementById("album-title");
+const albumDetails = document.getElementById("album-details");
+const trackList = document.getElementById("track-list");
+const artistImg = document.getElementById("artist-img");
 
 const fetchAlbumData = (id) => {
   fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
     .then((res) => {
-      if (res.ok) {
-        return res.json()
-      } else {
-        throw new Error("Errore:", res.status)
-      }
+      if (res.ok) return res.json();
+      else throw new Error("Errore HTTP: " + res.status);
     })
-
     .then((album) => {
-      //header
-      albumCover.src = album.cover_big
-      albumTitle.textContent = album.title
+      // HEADER
+      albumCover.src = album.cover_big;
+      albumTitle.textContent = album.title;
 
-      //artista
-      albumDetails.innerHTML = `<b>${album.artist.name}</b> • ${
-        album.release_date
-      } • <b>${album.nb_tracks} brani</b>, ${parseInt(
-        album.duration / 60
-      )} minuti ${album.duration % 60} secondi`
-      artistImg.src = album.artist.picture_small
+      // ARTISTA
+      albumDetails.innerHTML = `<b>${album.artist.name}</b> • ${album.release_date} • <b>${album.nb_tracks} brani</b>, ${parseInt(album.duration / 60)} minuti ${album.duration % 60} secondi`;
+      artistImg.src = album.artist.picture_small;
 
-      //nome artista cliccabile che rimanda alla pagina artist.html
+      // Nome artista cliccabile
       albumDetails.addEventListener("click", () => {
-        window.location.assign(`artist.html?id=${album.artist.id}`)
-      })
-      // Pulisco liste
-      trackList.innerHTML = ""
-      viewsList.innerHTML = ""
-      durationList.innerHTML = ""
+        window.location.assign(`artist.html?id=${album.artist.id}`);
+      });
 
-      // Creo gli elementi per ogni traccia
-      album.tracks.data.forEach((track) => {
-        const liTitle = document.createElement("li")
-        liTitle.className =
-          "d-flex justify-content-between align-items-center py-2"
-        liTitle.style.cursor = "pointer"
+      // Pulizia lista
+      trackList.innerHTML = "";
 
-        const div = document.createElement("div")
-        div.className = "d-flex flex-column"
+      album.tracks.data.forEach((track, index) => {
+        const minutes = Math.floor(track.duration / 60);
+        const seconds = (track.duration % 60).toString().padStart(2, "0");
 
-        const trackTitle = document.createElement("p")
-        trackTitle.className = "mb-0 fw-bold"
-        trackTitle.textContent = track.title
+        const row = document.createElement("div");
+        row.className = "d-flex align-items-center py-2 text-light track-row";
+        row.style.cursor = "default";
 
-        const trackArtist = document.createElement("p")
-        trackArtist.className = "mb-0 text-secondary"
-        trackArtist.textContent = track.artist.name
+        // SINISTRA: numero, titolo, artista
+        const left = document.createElement("div");
+        left.style.flex = "0 0 60%"; // larghezza fissa 60%
+        left.className = "d-flex align-items-center gap-3";
 
-        div.appendChild(trackTitle)
-        div.appendChild(trackArtist)
-        liTitle.appendChild(div)
+        const trackNumber = document.createElement("span");
+        trackNumber.className = "text-secondary small";
+        trackNumber.textContent = index + 1;
 
-        // Views
-        const liViews = document.createElement("li")
-        liViews.className = "text-secondary py-4"
-        liViews.textContent = track.rank
+        const titleDiv = document.createElement("div");
+        titleDiv.className = "d-flex flex-column";
+        const trackTitle = document.createElement("p");
+        trackTitle.className = "mb-0 fw-semibold";
+        trackTitle.textContent = track.title;
+        const trackArtist = document.createElement("p");
+        trackArtist.className = "mb-0 text-secondary";
+        trackArtist.textContent = track.artist.name;
 
-        // Durata
-        const liDuration = document.createElement("li")
-        const minutes = Math.floor(track.duration / 60)
-        const seconds = track.duration % 60
-        liDuration.className = "text-secondary py-4"
-        liDuration.textContent = `${minutes}:${seconds}`
+        titleDiv.appendChild(trackTitle);
+        titleDiv.appendChild(trackArtist);
+        left.appendChild(trackNumber);
+        left.appendChild(titleDiv);
 
-        // Aggiungo agli elenchi
-        trackList.appendChild(liTitle)
-        viewsList.appendChild(liViews)
-        durationList.appendChild(liDuration)
-      })
+        // CENTRALE: visualizzazioni
+        const views = document.createElement("div");
+        views.style.flex = "0 0 25%"; // larghezza fissa
+        views.className = "text-secondary text-end small";
+        views.textContent = track.rank.toLocaleString();
+
+        // DESTRA: durata
+        const duration = document.createElement("div");
+        duration.style.flex = "0 0 15%"; // larghezza fissa
+        duration.className = "text-secondary text-end small";
+        duration.textContent = `${minutes}:${seconds}`;
+
+        // APPENDO TUTTO ALLA RIGA
+        row.appendChild(left);
+        row.appendChild(views);
+        row.appendChild(duration);
+
+        trackList.appendChild(row);
+      });
     })
-    .catch((err) => {})
-}
-fetchAlbumData(albumId || 75621062)
+    .catch((err) => console.error(err));
+};
+
+fetchAlbumData(albumId || 75621062);
+

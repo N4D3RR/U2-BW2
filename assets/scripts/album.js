@@ -10,7 +10,7 @@ console.log(albumId)
 
 const albumCover = document.getElementById("album-cover")
 const albumTitle = document.getElementById("album-title")
-const albumArtist = document.getElementById("album-artist")
+const albumDetails = document.getElementById("album-artist")
 const trackList = document.getElementById("track-list")
 const viewsList = document.getElementById("views")
 const durationList = document.getElementById("duration")
@@ -34,9 +34,60 @@ const fetchAlbumData = (id) => {
       albumTitle.textContent = album.title
       //artista
       albumArtist.textContent = album.artist.name
+      albumArtist.style.cursor = "pointer"
       artistImg.src = album.artist.picture_small
-      albumDate.textContent = album.release_date + ` •` + ` `
-      albumSongs.textContent = album.nb_tracks + " brani," + album.duration
+      albumDate.textContent = album.release_date + ` •`
+      albumSongs.textContent =
+        album.nb_tracks + " brani," + album.duration + "sec."
+
+      //nome artista cliccabile che rimanda alla pagina artist.html
+      albumArtist.addEventListener("click", () => {
+        window.location.assign(`artist.html?id=${album.artist.id}`)
+      })
+      // Pulisco liste
+      trackList.innerHTML = ""
+      viewsList.innerHTML = ""
+      durationList.innerHTML = ""
+
+      // Creo gli elementi per ogni traccia
+      album.tracks.data.forEach((track) => {
+        const liTitle = document.createElement("li")
+        liTitle.className =
+          "d-flex justify-content-between align-items-center py-2"
+        liTitle.style.cursor = "pointer"
+
+        const div = document.createElement("div")
+        div.className = "d-flex flex-column"
+
+        const trackTitle = document.createElement("p")
+        trackTitle.className = "mb-0 fw-bold"
+        trackTitle.textContent = track.title
+
+        const trackArtist = document.createElement("p")
+        trackArtist.className = "mb-0 text-secondary"
+        trackArtist.textContent = track.artist.name
+
+        div.appendChild(trackTitle)
+        div.appendChild(trackArtist)
+        liTitle.appendChild(div)
+
+        // Views
+        const liViews = document.createElement("li")
+        liViews.className = "text-secondary py-4"
+        liViews.textContent = track.rank
+
+        // Durata
+        const liDuration = document.createElement("li")
+        const minutes = Math.floor(track.duration / 60)
+        const seconds = track.duration % 60
+        liDuration.className = "text-secondary py-4"
+        liDuration.textContent = `${minutes}:${seconds}`
+
+        // Aggiungo agli elenchi
+        trackList.appendChild(liTitle)
+        viewsList.appendChild(liViews)
+        durationList.appendChild(liDuration)
+      })
     })
     .catch((err) => {})
 }

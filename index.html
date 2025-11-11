@@ -16,9 +16,9 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
+  <body class="d-flex flex-column vh-100 bg-dark">
     <!-- CON G-0 TOGLIAMO IL GAP E NON SFORA -->
-    <div class="row g-0 flex-nowrap">
+    <div class="d-flex flex-grow-1 overflow-hidden g-0">
       <!-- ASIDE SINISTRA -->
       <aside
         class="col-12 col-md-3 d-none d-md-flex bg-black text-light flex-column overflow-auto p-3"
@@ -254,7 +254,7 @@
       <!-- MAIN -->
 
       <main
-        class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1"
+        class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1 overflow-auto pb-5"
       >
         <div
           class="d-flex justify-content-between align-items-center my-2 d-none d-md-flex px-3"
@@ -275,7 +275,7 @@
                 alt="user-logo"
                 class="rounded-5"
               />
-              <small class="fw-bold">Enzo Ghinazzi(Pupo)...</small>
+              <small class="fw-bold">(Pupo) Enzo Ghinazzi...</small>
             </button>
             <ul class="dropdown-menu bg-black">
               <li><a class="dropdown-item text-light" href="#">Action</a></li>
@@ -335,7 +335,7 @@
         </div>
         <div class="container">
           <h2 class="my-4 fw-bold">Buonasera</h2>
-          <div class="row row-cols-1 row-cols-md-3 flex-grow-1">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 flex-grow-1">
             <div class="col">
               <div class="card mb-3 text-center">
                 <div class="row g-0">
@@ -346,8 +346,10 @@
                       alt="Card title"
                     />
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
+                  <div class="col-md-8 d-flex">
+                    <div
+                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                    >
                       <h5 class="card-title">pov: la tua estate è un film</h5>
                     </div>
                   </div>
@@ -362,8 +364,10 @@
                       alt="Card title"
                     />
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
+                  <div class="col-md-8 d-flex">
+                    <div
+                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                    >
                       <h5 class="card-title">lofi beats</h5>
                     </div>
                   </div>
@@ -380,8 +384,10 @@
                       alt="Card title"
                     />
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
+                  <div class="col-md-8 d-flex">
+                    <div
+                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                    >
                       <h5 class="card-title">Pulizie di casa</h5>
                     </div>
                   </div>
@@ -396,8 +402,10 @@
                       alt="Card title"
                     />
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
+                  <div class="col-md-8 d-flex">
+                    <div
+                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                    >
                       <h5 class="card-title">sanguegiovane</h5>
                     </div>
                   </div>
@@ -414,8 +422,10 @@
                       alt="Card title"
                     />
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
+                  <div class="col-md-8 d-flex">
+                    <div
+                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                    >
                       <h5 class="card-title">Caffè del Buongiorno</h5>
                     </div>
                   </div>
@@ -430,8 +440,10 @@
                       alt="Card title"
                     />
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
+                  <div class="col-md-8 d-flex">
+                    <div
+                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                    >
                       <h5 class="card-title">StreetCulto</h5>
                     </div>
                   </div>
@@ -441,13 +453,13 @@
           </div>
         </div>
         <!--  altri consigli -->
-        <div class="container d-flex flex-column">
+        <div class="container d-flex flex-column d-grid">
           <div class="d-flex justify-content-between align-items-center">
             <h4 class="my-4 fw-bold">Altro di ciò che ti piace</h4>
             <a>VISUALIZZA TUTTO</a>
           </div>
-          <div class="row row-cols-1 row-cols-md-5">
-            <div class="col">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
+            <div class="col mb-md-2">
               <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
@@ -462,7 +474,7 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col mb-md-2">
               <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
@@ -479,7 +491,7 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col mb-md-2">
               <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
@@ -492,7 +504,7 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col mb-md-2">
               <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
@@ -505,7 +517,7 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col mb-md-2">
               <div class="card bg-dark text-white p-3 h-100">
                 <img
                   class="card-img-top rounded-2"
@@ -523,12 +535,86 @@
               </div>
             </div>
           </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
+            <div class="col mb-md-2">
+              <div class="card bg-dark text-white p-3 h-100">
+                <img
+                  class="card-img-top rounded-2"
+                  src="./assets/imgs/search/image-1.jpeg"
+                  alt="Title"
+                />
+                <div class="card-body p-0 pt-3">
+                  <p class="fw-bold card-title fw-bold">Your Discover Weekly</p>
+                  <p class="fw-light card-text">
+                    La tua playlist di scoperte settimanali
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-md-2">
+              <div class="card bg-dark text-white p-3 h-100">
+                <img
+                  class="card-img-top rounded-2"
+                  src="./assets/imgs/search/image-14.jpg"
+                  alt="Title"
+                />
+                <div class="card-body p-0 pt-3">
+                  <p class="fw-bold card-title fw-bold">Top Songs Global</p>
+                  <p class="fw-light card-text">le migliori hit del momento</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-md-2">
+              <div class="card bg-dark text-white p-3 h-100">
+                <img
+                  class="card-img-top rounded-2"
+                  src="./assets/imgs/search/image-33.jpg"
+                  alt="Title"
+                />
+                <div class="card-body p-0 pt-3">
+                  <p class="fw-bold card-title fw-bold">New Punk Tracks</p>
+                  <p class="fw-light card-text">
+                    Le hit punk migliori del momento
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-md-2">
+              <div class="card bg-dark text-white p-3 h-100">
+                <img
+                  class="card-img-top rounded-2"
+                  src="./assets/imgs/search/image-13.jpeg"
+                  alt="Title"
+                />
+                <div class="card-body p-0 pt-3">
+                  <p class="fw-bold card-title fw-bold">Your Summer Rewind</p>
+                  <p class="fw-light card-text">Rivivi i tuoi momenti estivi</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-md-2">
+              <div class="card bg-dark text-white p-3 h-100">
+                <img
+                  class="card-img-top rounded-2"
+                  src="./assets/imgs/search/image-27.jpg"
+                  alt="Title"
+                />
+                <div class="card-body p-0 pt-3">
+                  <p class="fw-bold card-title fw-bold">Party Hits</p>
+                  <p class="fw-light card-text">
+                    le canzoni perfette per il tuo party
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
       <!-- ASIDE DESTRA -->
       <aside
-        class="col-12 col-md-2 d-none d-md-flex flex-column bg-black text-light ps-3 pe-1"
+        class="col-12 col-md-2 d-none d-md-flex flex-column bg-black text-light ps-3 pe-1 overflow-auto"
       >
         <div class="d-flex justify-content-between mt-2 align-items-baseline">
           <h6>Attività amici</h6>
@@ -539,16 +625,35 @@
         <div class="row align-items-center text-start mt-3 ms-1 me-0 mb-1">
           <div class="col-3">
             <img
-              src="https://placecats.com/50/50"
+              src="https://placedog.net/50/50"
               alt="amici"
               class="rounded-circle img-fluid"
             />
           </div>
           <div class="col-7">
-            <p class="mb-1 fw-semibold small">Titolo</p>
-            <p class="mb-0 text-secondary small">Artista • Album</p>
+            <p class="mb-1 fw-semibold small">Leonardo DiCaprio</p>
+            <p class="mb-0 text-secondary small">
+              Giuseppe Cruciani • La Zanzara
+            </p>
             <p class="mb-0 text-secondary small">
               <i class="bi bi-disc"></i> EP 3
+            </p>
+          </div>
+          <div class="col-2 text-secondary px-0">2h fa</div>
+        </div>
+        <div class="row align-items-center text-start mt-3 ms-1 me-0 mb-1">
+          <div class="col-3">
+            <img
+              src="https://placebear.com/50/50"
+              alt="amici"
+              class="rounded-circle img-fluid"
+            />
+          </div>
+          <div class="col-7">
+            <p class="mb-1 fw-semibold small">Jannik Sinner</p>
+            <p class="mb-0 text-secondary small">Queen • Greates Hits II</p>
+            <p class="mb-0 text-secondary small">
+              <i class="bi bi-disc"></i> Under Pressure
             </p>
           </div>
           <div class="col-2 text-secondary px-0">8h</div>
@@ -562,35 +667,21 @@
             />
           </div>
           <div class="col-7">
-            <p class="mb-1 fw-semibold small">Titolo</p>
-            <p class="mb-0 text-secondary small">Artista • Album</p>
+            <p class="mb-1 fw-semibold small">Jeff Bezos</p>
+            <p class="mb-0 text-secondary small">Pupo • Ciao</p>
             <p class="mb-0 text-secondary small">
-              <i class="bi bi-disc"></i> EP 3
+              <i class="bi bi-music-note-beamed"></i> Gelato Al Cioccolato
             </p>
           </div>
-          <div class="col-2 text-secondary px-0">8h</div>
-        </div>
-        <div class="row align-items-center text-start mt-3 ms-1 me-0 mb-1">
-          <div class="col-3">
-            <img
-              src="https://placecats.com/50/50"
-              alt="amici"
-              class="rounded-circle img-fluid"
-            />
-          </div>
-          <div class="col-7">
-            <p class="mb-1 fw-semibold small">Titolo</p>
-            <p class="mb-0 text-secondary small">Artista • Album</p>
-            <p class="mb-0 text-secondary small">
-              <i class="bi bi-disc"></i> EP 3
-            </p>
-          </div>
-          <div class="col-2 text-secondary px-0">8h</div>
+          <div class="col-2 text-secondary px-0">8h fa</div>
         </div>
       </aside>
     </div>
 
-    <footer id="player" class="w-100 bg-dark sticky-bottom">
+    <footer
+      id="player"
+      class="bg-dark text-white fixed-bottom border-top border-secondary"
+    >
       <div class="d-flex align-items-center justify-content-between">
         <div class="mw-100 text-white d-flex align-items-center">
           <img

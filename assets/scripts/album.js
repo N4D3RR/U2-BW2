@@ -26,12 +26,12 @@ const fetchAlbumData = (id) => {
       albumDetails.innerHTML = `<b>${album.artist.name}</b> • ${album.release_date} • <b>${album.nb_tracks} brani</b>, ${parseInt(album.duration / 60)} minuti ${album.duration % 60} secondi`;
       artistImg.src = album.artist.picture_small;
 
-      // Nome artista cliccabile
+      // NOME ARTISTA CLICCABILE
       albumDetails.addEventListener("click", () => {
         window.location.assign(`artist.html?id=${album.artist.id}`);
       });
 
-      // Pulizia lista
+   
       trackList.innerHTML = "";
 
       album.tracks.data.forEach((track, index) => {
@@ -42,9 +42,9 @@ const fetchAlbumData = (id) => {
         row.className = "d-flex align-items-center py-2 text-light track-row";
         row.style.cursor = "default";
 
-        // SINISTRA: numero, titolo, artista
+        //TITOLO
         const left = document.createElement("div");
-        left.style.flex = "0 0 60%"; // larghezza fissa 60%
+        left.style.flex = "0 0 60%"; 
         left.className = "d-flex align-items-center gap-3";
 
         const trackNumber = document.createElement("span");
@@ -65,19 +65,19 @@ const fetchAlbumData = (id) => {
         left.appendChild(trackNumber);
         left.appendChild(titleDiv);
 
-        // CENTRALE: visualizzazioni
+        // VISUAL
         const views = document.createElement("div");
-        views.style.flex = "0 0 25%"; // larghezza fissa
+        views.style.flex = "0 0 25%"; 
         views.className = "text-secondary text-end small";
         views.textContent = track.rank.toLocaleString();
 
-        // DESTRA: durata
+        //DURATA
         const duration = document.createElement("div");
-        duration.style.flex = "0 0 15%"; // larghezza fissa
+        duration.style.flex = "0 0 15%"; 
         duration.className = "text-secondary text-end small";
         duration.textContent = `${minutes}:${seconds}`;
 
-        // APPENDO TUTTO ALLA RIGA
+        
         row.appendChild(left);
         row.appendChild(views);
         row.appendChild(duration);
@@ -89,4 +89,3 @@ const fetchAlbumData = (id) => {
 };
 
 fetchAlbumData(albumId || 75621062);
-

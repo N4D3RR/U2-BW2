@@ -14,10 +14,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
+  <body class="d-flex flex-column vh-100 bg-dark">
     <!-- CON G-0 TOGLIAMO IL GAP E NON SFORA -->
-    <div class="row g-0 flex-nowrap">
+    <div class="d-flex flex-grow-1 overflow-hidden g-0">
       <!-- ASIDE SINISTRA -->
       <aside
         class="col-12 col-md-3 d-none d-md-flex bg-black text-light flex-column overflow-auto p-3"
@@ -253,7 +254,7 @@
       <!-- MAIN -->
 
       <main
-        class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1"
+        class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1 overflow-auto pb-5"
       >
         <div
           class="d-flex justify-content-between align-items-center my-2 d-none d-md-flex px-3"
@@ -357,7 +358,10 @@
       </aside>
     </div>
 
-    <footer id="player" class="w-100 bg-dark sticky-bottom">
+    <footer
+      id="player"
+      class="bg-dark text-white fixed-bottom border-top border-secondary"
+    >
       <div class="d-flex align-items-center justify-content-between">
         <div class="mw-100 text-white d-flex align-items-center">
           <img

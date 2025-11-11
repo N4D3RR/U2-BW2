@@ -266,15 +266,23 @@
         <!-- HEADER -->
         <div class="row bg-black bg-gradient mx-3 py-4" id="album-header">
           <div class="col col-4">
-            <img id="album-cover" src="#" alt="album cover" class="img-fluid" />
+            <img id="album-cover" src="" alt="album cover" class="img-fluid" />
           </div>
           <div class="col col-8">
             <p class="small">ALBUM</p>
             <h1 id="album-title">CIAO</h1>
-            <div class="d-flex">
-              <img src="#" alt="artist logo" id="artist-img" />
+            <div class="d-flex flex-grow-1">
+              <img
+                src="#"
+                alt="artist logo"
+                id="artist-img"
+                class="rounded-circle"
+              />
               <p id="album-artist">Artista</p>
-              <p id="album-info">Anno- Brani</p>
+
+              <p id="album-date">Anno</p>
+
+              <p id="album-songs">Brani</p>
             </div>
           </div>
         </div>
@@ -473,5 +481,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="/assets/scripts/album.js"></script>
   </body>
 </html>

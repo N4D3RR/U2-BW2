@@ -10,7 +10,7 @@ console.log(albumId)
 
 const albumCover = document.getElementById("album-cover")
 const albumTitle = document.getElementById("album-title")
-const albumDetails = document.getElementById("album-artist")
+const albumDetails = document.getElementById("album-details")
 const trackList = document.getElementById("track-list")
 const viewsList = document.getElementById("views")
 const durationList = document.getElementById("duration")
@@ -33,12 +33,12 @@ const fetchAlbumData = (id) => {
       albumCover.src = album.cover_big
       albumTitle.textContent = album.title
       //artista
-      albumArtist.textContent = album.artist.name
-      albumArtist.style.cursor = "pointer"
+      albumDetails.innerHTML = `<b>${album.artist.name}</b> • ${
+        album.release_date
+      } • <b>${album.nb_tracks} brani</b>, ${parseInt(
+        album.duration / 60
+      )} minuti ${album.duration % 60} secondi`
       artistImg.src = album.artist.picture_small
-      albumDate.textContent = album.release_date + ` •`
-      albumSongs.textContent =
-        album.nb_tracks + " brani," + album.duration + "sec."
 
       //nome artista cliccabile che rimanda alla pagina artist.html
       albumArtist.addEventListener("click", () => {

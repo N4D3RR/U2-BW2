@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body class="d-flex flex-column vh-100 bg-dark">
     <!-- CON G-0 TOGLIAMO IL GAP E NON SFORA -->
@@ -293,44 +294,41 @@
           class="mx-3 row bg-black bg-gradient py-4 d-none d-md-flex"
           id="annuncio"
         >
-          <div class="col col-4">
+          <div class="col col-3 pe-3 align-self-start">
             <img
               src="/assets/imgs/main/image-1.jpg"
               alt="main-img"
-              class="float-start img-fluid"
+              class="img-fluid h-100"
             />
           </div>
 
-          <div class="col col-8">
+          <div class="col col-9 ps-0">
             <div class="d-flex justify-content-between">
-              <h6 id="album">ALBUM</h6>
-              <button
-                type="button"
-                class="btn btn-secondary bg-black bg-gradient"
-              >
-                <small>NASCONDI ANNUNCI</small>
+              <small id="album" class="align-self-start mb-1">ALBUM</small>
+              <button type="button" class="btn border-0 bg-dark">
+                <small class="text-secondary">NASCONDI ANNUNCI</small>
               </button>
             </div>
             <div>
-              <h1 id="song-title">VIOLA(feat. Salmo)</h1>
+              <h1 id="song-title" class="display-3 fw-bold">
+                VIOLA(feat. Salmo)
+              </h1>
               <p id="artist-name">Fedez, Salmo</p>
               <p id="descrizione">Ascolta il nuovo singolo di Fedez e Salmo!</p>
-              <div
-                class="row row-cols align-items-center justify-content-evenly"
-              >
+              <div class="row row-cols align-items-center">
                 <button
                   type="button"
-                  class="btn btn-success text-black rounded-pill col-3 fw-bold"
+                  class="btn btn-success text-black rounded-pill col-2 fw-bold py-2 me-3 ms-3"
                 >
                   Play
                 </button>
                 <button
                   type="button"
-                  class="btn text-white rounded-pill border-white bg-black col-3 fw-bold"
+                  class="btn text-white rounded-pill border-white bg-black col-2 fw-bold py-2 me-2"
                 >
                   Salva
                 </button>
-                <h4 class="col-5 text-secondary">...</h4>
+                <h4 class="col-5 text-secondary align-self-baseline">...</h4>
               </div>
             </div>
           </div>
@@ -658,7 +656,7 @@
               <i class="bi bi-disc"></i> Under Pressure
             </p>
           </div>
-          <div class="col-2 text-secondary px-0">8h</div>
+          <div class="col-2 text-secondary px-0">4h fa</div>
         </div>
         <div class="row align-items-center text-start mt-3 ms-1 me-0 mb-1">
           <div class="col-3">

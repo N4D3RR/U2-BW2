@@ -11,15 +11,26 @@ const albumDetails = document.getElementById("album-details")
 const trackList = document.getElementById("track-list")
 const artistImg = document.getElementById("artist-img")
 
+const audio = document.getElementById("audio-player")
+
 // FUNZIONE PLAY/PAUSE
 
 const playPauseBtn = document.getElementById("play-btn")
 const pauseBtn = document.querySelector(".bi-pause-circle-fill")
 const playBtn = document.getElementById("play")
 const footerImg = document.getElementById("footer-img")
+const footer = document.getElementById("player")
 playPause = () => {
-  playBtn.classList.toggle("d-none")
-  pauseBtn.classList.toggle("d-none")
+  if (audio.paused) {
+    audio.play()
+    playBtn.classList.add("d-none")
+    pauseBtn.classList.remove("d-none")
+    footer.classList.remove("d-none")
+  } else {
+    audio.pause()
+    playBtn.classList.remove("d-none")
+    pauseBtn.classList.add("d-none")
+  }
 }
 playTopBtn = document.getElementById("play-btn-top")
 playTopBtn.style.cursor = "pointer"
@@ -74,8 +85,8 @@ const fetchAlbumData = (id) => {
 
         titleDiv.className = "d-flex flex-column"
         const trackTitle = document.createElement("p")
+
         trackTitle.onclick = () => {
-          playPause()
           const footerImg = document.getElementById("footer-img")
           const footerTitle = document.getElementById("footer-track-title")
           const footerArtist = document.getElementById("footer-track-artist")
@@ -85,8 +96,9 @@ const fetchAlbumData = (id) => {
           footerArtist.textContent = track.artist.name
           const minutes = Math.floor(track.duration / 60)
           const seconds = (track.duration % 60).toString().padStart(2, "0")
-
           trackDuration.textContent = `${minutes}:${seconds}`
+          audio.src = track.preview
+          playPause()
         }
         trackTitle.className = "mb-0 fw-semibold"
 

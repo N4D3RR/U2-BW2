@@ -32,20 +32,41 @@
           <li class="nav-item">
             <a
               class="nav-link d-flex align-items-center gap-2 text-white"
-              href="#"
+              href="index.html"
               ><i class="bi bi-house-door-fill me-2"></i>Home</a
             >
           </li>
-          <li class="nav-item">
+          <!--RICERCA-->
+          <li class="nav-item dropdown pb-0 py-2">
             <a
-              class="nav-link d-flex align-items-center gap-2 text-secondary"
-              href="#"
-              ><i class="bi bi-search me-2"></i>Cerca</a
+              class="p-0 ps-3 pe-2 py-1 text-decoration-none text-light"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
             >
+              <i class="bi bi-search pe-1"></i>
+              <p class="fw-bold d-inline-block ps-2">Cerca</p>
+            </a>
+            <ul class="dropdown-menu bg-black">
+              <li>
+                <form class="d-flex" role="search" id="search-form">
+                  <input
+                    id="search-input"
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Cerca"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    Cerca
+                  </button>
+                </form>
+              </li>
+            </ul>
           </li>
+
           <li class="nav-item mb-3">
             <a
-              class="nav-link d-flex align-items-center gap-2 text-secondary"
+              class="nav-link d-flex align-items-center gap-2 text-secondary pt-0"
               href="#"
               ><i class="bi bi-collection me-2"></i>La tua libreria</a
             >
@@ -256,364 +277,393 @@
       <main
         class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1 overflow-auto pb-5"
       >
-        <div
-          class="d-flex justify-content-between align-items-center my-2 d-none d-md-flex px-3"
-        >
-          <div>
-            <i class="bi bi-chevron-left rounded-5 p-1 bg-black me-2"></i>
-            <i class="bi bi-chevron-right rounded-5 p-1 bg-black"></i>
-          </div>
-          <div class="dropdown">
-            <button
-              class="btn rounded-5 btn-dark bg-black dropdown-toggle p-0 ps-1 pe-2 py-1"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src="https://placecats.com/25/25"
-                alt="user-logo"
-                class="rounded-5"
-              />
-              <small class="fw-bold">(Pupo) Enzo Ghinazzi...</small>
-            </button>
-            <ul class="dropdown-menu bg-black">
-              <li><a class="dropdown-item text-light" href="#">Action</a></li>
-              <li>
-                <a class="dropdown-item text-light" href="#">Another action</a>
-              </li>
-              <li>
-                <a class="dropdown-item text-light" href="#"
-                  >Something else here</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          class="mx-3 row bg-black bg-gradient py-4 d-none d-md-flex"
-          id="annuncio"
-        >
-          <div class="col col-3 pe-3 align-self-start">
-            <img
-              src="/assets/imgs/main/image-1.jpg"
-              alt="main-img"
-              class="img-fluid h-100"
-            />
-          </div>
-
-          <div class="col col-9 ps-0">
-            <div class="d-flex justify-content-between">
-              <small id="album" class="align-self-start mb-1">ALBUM</small>
-              <button type="button" class="btn border-0 bg-dark">
-                <small class="text-secondary">NASCONDI ANNUNCI</small>
-              </button>
-            </div>
-            <div>
-              <h1 id="song-title" class="display-3 fw-bold">
-                VIOLA(feat. Salmo)
-              </h1>
-              <p id="artist-name">Fedez, Salmo</p>
-              <p id="descrizione">Ascolta il nuovo singolo di Fedez e Salmo!</p>
-              <div class="row row-cols align-items-center">
-                <button
-                  type="button"
-                  class="btn btn-success text-black rounded-pill col-2 fw-bold py-2 me-3 ms-3"
-                >
-                  Play
-                </button>
-                <button
-                  type="button"
-                  class="btn text-white rounded-pill border-white bg-black col-2 fw-bold py-2 me-2"
-                >
-                  Salva
-                </button>
-                <h4 class="col-5 text-secondary align-self-baseline">...</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="container">
-          <h2 class="my-4 fw-bold">Buonasera</h2>
+        <section id="search-list" class="row justify-content-center">
+          <div id="result"></div>
+        </section>
+        <div id="main-content">
           <div
-            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 flex-grow-1"
-            id="cards-cols"
+            class="d-flex justify-content-between align-items-center my-2 d-none d-md-flex px-3"
           >
-            <div class="col">
-              <div class="album card mb-3 text-center" data-album-id="915785">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="https://api.deezer.com/album/915785/image"
-                      class="img-fluid rounded-start w-100"
-                      alt="Card title"
-                    />
-                  </div>
-                  <div class="col-md-8 d-flex">
-                    <div
-                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
-                    >
-                      <h5 class="card-title">A Night At The Opera</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="album card mb-3 text-center" data-album-id="76311092">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="https://api.deezer.com/album/76311092/image"
-                      class="img-fluid rounded-start w-100"
-                      alt="Card title"
-                    />
-                  </div>
-                  <div class="col-md-8 d-flex">
-                    <div
-                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
-                    >
-                      <h5 class="card-title">Playlist</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div>
+              <i class="bi bi-chevron-left rounded-5 p-1 bg-black me-2"></i>
+              <i class="bi bi-chevron-right rounded-5 p-1 bg-black"></i>
             </div>
-            <div class="col">
-              <div class="album card mb-3 text-center" data-album-id="50543802">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="https://api.deezer.com/album/50543802/image"
-                      class="img-fluid rounded-start w-100"
-                      alt="Card title"
-                    />
-                  </div>
-                  <div class="col-md-8 d-flex">
-                    <div
-                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
-                    >
-                      <h5 class="card-title">Number One</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="album card mb-3 text-center"
-                data-album-id="651947101"
+            <div class="dropdown">
+              <button
+                class="btn rounded-5 btn-dark bg-black dropdown-toggle p-0 ps-1 pe-2 py-1"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="https://api.deezer.com/album/651947101/image"
-                      class="img-fluid rounded-start w-100"
-                      alt="Card title"
-                    />
-                  </div>
-                  <div class="col-md-8 d-flex">
-                    <div
-                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
-                    >
-                      <h5 class="card-title">Tornerò</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="album card mb-3 text-center" data-album-id="103248">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="https://api.deezer.com/album/103248/image"
-                      class="img-fluid rounded-start w-100"
-                      alt="Card title"
-                    />
-                  </div>
-                  <div class="col-md-8 d-flex">
-                    <div
-                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
-                    >
-                      <h5 class="card-title">The Eminem Show</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="album card mb-3 text-center"
-                data-album-id="127270232"
-              >
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img
-                      src="https://api.deezer.com/album/127270232/image"
-                      class="img-fluid rounded-start w-100"
-                      alt="Card title"
-                    />
-                  </div>
-                  <div class="col-md-8 d-flex">
-                    <div
-                      class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
-                    >
-                      <h5 class="card-title">Music To Be Murdered By</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <img
+                  src="https://placecats.com/25/25"
+                  alt="user-logo"
+                  class="rounded-5"
+                />
+                <small class="fw-bold">(Pupo) Enzo Ghinazzi...</small>
+              </button>
+              <ul class="dropdown-menu bg-black">
+                <li><a class="dropdown-item text-light" href="#">Action</a></li>
+                <li>
+                  <a class="dropdown-item text-light" href="#"
+                    >Another action</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item text-light" href="#"
+                    >Something else here</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-        <!--  altri consigli -->
-        <div class="container d-flex flex-column d-grid">
-          <div class="d-flex justify-content-between align-items-center">
-            <h4 class="my-4 fw-bold">Altro di ciò che ti piace</h4>
-            <a>VISUALIZZA TUTTO</a>
-          </div>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/main/image-16.jpg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">Lavorare da Casa</p>
-                  <p class="fw-light card-text">
-                    Lavori da casa? Questa è la tua playlist
-                  </p>
-                </div>
-              </div>
+          <div
+            class="mx-3 row bg-black bg-gradient py-4 d-none d-md-flex"
+            id="annuncio"
+          >
+            <div class="col col-3 pe-3 align-self-start">
+              <img
+                src="/assets/imgs/main/image-1.jpg"
+                alt="main-img"
+                class="img-fluid h-100"
+              />
             </div>
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/main/image-3.jpg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">
-                    Massima concetrazione
-                  </p>
-                  <p class="fw-light card-text">
-                    Se ti vuoi concentrare questa playlist devi ascoltare
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/main/image-10.jpg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">Operazione Buonumore</p>
-                  <p class="fw-light card-text">La felicità in una playlist</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/main/image-17.jpg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">New Music Friday</p>
-                  <p class="fw-light card-text">La playlist del venerdì</p>
-                </div>
-              </div>
-            </div>
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/main/image-9.jpg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">
-                    Canta Sotto La Doccia
-                  </p>
-                  <p class="fw-light card-text">
-                    Canta questa playlist sotto la doccia
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5">
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/search/image-1.jpeg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">Your Discover Weekly</p>
-                  <p class="fw-light card-text">
-                    La tua playlist di scoperte settimanali
-                  </p>
+            <div class="col col-9 ps-0">
+              <div class="d-flex justify-content-between">
+                <small id="album" class="align-self-start mb-1">ALBUM</small>
+                <button type="button" class="btn border-0 bg-dark">
+                  <small class="text-secondary">NASCONDI ANNUNCI</small>
+                </button>
+              </div>
+              <div>
+                <h1 id="song-title" class="display-3 fw-bold">
+                  VIOLA(feat. Salmo)
+                </h1>
+                <p id="artist-name">Fedez, Salmo</p>
+                <p id="descrizione">
+                  Ascolta il nuovo singolo di Fedez e Salmo!
+                </p>
+                <div class="row row-cols align-items-center">
+                  <button
+                    type="button"
+                    class="btn btn-success text-black rounded-pill col-2 fw-bold py-2 me-3 ms-3"
+                  >
+                    Play
+                  </button>
+                  <button
+                    type="button"
+                    class="btn text-white rounded-pill border-white bg-black col-2 fw-bold py-2 me-2"
+                  >
+                    Salva
+                  </button>
+                  <h4 class="col-5 text-secondary align-self-baseline">...</h4>
                 </div>
               </div>
             </div>
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/search/image-14.jpg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">Top Songs Global</p>
-                  <p class="fw-light card-text">le migliori hit del momento</p>
+          </div>
+          <div class="container">
+            <h2 class="my-4 fw-bold">Buonasera</h2>
+            <div
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-3 flex-grow-1"
+              id="cards-cols"
+            >
+              <div class="col">
+                <div class="album card mb-3 text-center" data-album-id="915785">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="https://api.deezer.com/album/915785/image"
+                        class="img-fluid rounded-start w-100"
+                        alt="Card title"
+                      />
+                    </div>
+                    <div class="col-md-8 d-flex">
+                      <div
+                        class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                      >
+                        <h5 class="card-title">A Night At The Opera</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="album card mb-3 text-center"
+                  data-album-id="76311092"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="https://api.deezer.com/album/76311092/image"
+                        class="img-fluid rounded-start w-100"
+                        alt="Card title"
+                      />
+                    </div>
+                    <div class="col-md-8 d-flex">
+                      <div
+                        class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                      >
+                        <h5 class="card-title">Playlist</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="album card mb-3 text-center"
+                  data-album-id="50543802"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="https://api.deezer.com/album/50543802/image"
+                        class="img-fluid rounded-start w-100"
+                        alt="Card title"
+                      />
+                    </div>
+                    <div class="col-md-8 d-flex">
+                      <div
+                        class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                      >
+                        <h5 class="card-title">Number One</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="album card mb-3 text-center"
+                  data-album-id="651947101"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="https://api.deezer.com/album/651947101/image"
+                        class="img-fluid rounded-start w-100"
+                        alt="Card title"
+                      />
+                    </div>
+                    <div class="col-md-8 d-flex">
+                      <div
+                        class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                      >
+                        <h5 class="card-title">Tornerò</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="album card mb-3 text-center" data-album-id="103248">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="https://api.deezer.com/album/103248/image"
+                        class="img-fluid rounded-start w-100"
+                        alt="Card title"
+                      />
+                    </div>
+                    <div class="col-md-8 d-flex">
+                      <div
+                        class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                      >
+                        <h5 class="card-title">The Eminem Show</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="album card mb-3 text-center"
+                  data-album-id="127270232"
+                >
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src="https://api.deezer.com/album/127270232/image"
+                        class="img-fluid rounded-start w-100"
+                        alt="Card title"
+                      />
+                    </div>
+                    <div class="col-md-8 d-flex">
+                      <div
+                        class="card-body p-0 d-flex align-self-center justify-content-start ms-2"
+                      >
+                        <h5 class="card-title">Music To Be Murdered By</h5>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/search/image-33.jpg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">New Punk Tracks</p>
-                  <p class="fw-light card-text">
-                    Le hit punk migliori del momento
-                  </p>
+          </div>
+          <!--  altri consigli -->
+          <div class="container d-flex flex-column d-grid">
+            <div class="d-flex justify-content-between align-items-center">
+              <h4 class="my-4 fw-bold">Altro di ciò che ti piace</h4>
+              <a>VISUALIZZA TUTTO</a>
+            </div>
+            <div
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5"
+            >
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/main/image-16.jpg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">Lavorare da Casa</p>
+                    <p class="fw-light card-text">
+                      Lavori da casa? Questa è la tua playlist
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/main/image-3.jpg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">
+                      Massima concetrazione
+                    </p>
+                    <p class="fw-light card-text">
+                      Se ti vuoi concentrare questa playlist devi ascoltare
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/main/image-10.jpg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">
+                      Operazione Buonumore
+                    </p>
+                    <p class="fw-light card-text">
+                      La felicità in una playlist
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/main/image-17.jpg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">New Music Friday</p>
+                    <p class="fw-light card-text">La playlist del venerdì</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/main/image-9.jpg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">
+                      Canta Sotto La Doccia
+                    </p>
+                    <p class="fw-light card-text">
+                      Canta questa playlist sotto la doccia
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/search/image-13.jpeg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">Your Summer Rewind</p>
-                  <p class="fw-light card-text">Rivivi i tuoi momenti estivi</p>
+
+            <div
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5"
+            >
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/search/image-1.jpeg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">
+                      Your Discover Weekly
+                    </p>
+                    <p class="fw-light card-text">
+                      La tua playlist di scoperte settimanali
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col mb-md-2">
-              <div class="card bg-dark text-white p-3 h-100">
-                <img
-                  class="card-img-top rounded-2"
-                  src="./assets/imgs/search/image-27.jpg"
-                  alt="Title"
-                />
-                <div class="card-body p-0 pt-3">
-                  <p class="fw-bold card-title fw-bold">Party Hits</p>
-                  <p class="fw-light card-text">
-                    le canzoni perfette per il tuo party
-                  </p>
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/search/image-14.jpg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">Top Songs Global</p>
+                    <p class="fw-light card-text">
+                      le migliori hit del momento
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/search/image-33.jpg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">New Punk Tracks</p>
+                    <p class="fw-light card-text">
+                      Le hit punk migliori del momento
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/search/image-13.jpeg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">Your Summer Rewind</p>
+                    <p class="fw-light card-text">
+                      Rivivi i tuoi momenti estivi
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-md-2">
+                <div class="card bg-dark text-white p-3 h-100">
+                  <img
+                    class="card-img-top rounded-2"
+                    src="./assets/imgs/search/image-27.jpg"
+                    alt="Title"
+                  />
+                  <div class="card-body p-0 pt-3">
+                    <p class="fw-bold card-title fw-bold">Party Hits</p>
+                    <p class="fw-light card-text">
+                      le canzoni perfette per il tuo party
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -786,5 +836,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/scripts/index.js"></script>
+    <script src="assets/scripts/home.js"></script>
   </body>
 </html>

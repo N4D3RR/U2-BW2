@@ -1,4 +1,6 @@
-const URL = `https://striveschool-api.herokuapp.com/api/deezer/artist/412`
+const paramsString = window.location.search
+const params = new URLSearchParams(paramsString)
+const artistId = params.get("id") || 412
 
 const artistName = document.getElementById("artist-name")
 const fans = document.getElementById("monthly-viewers")
@@ -6,7 +8,7 @@ const songs = document.getElementById("songs")
 const albums = document.getElementById("other-album")
 const artistHeader = document.getElementById("artist-header")
 
-fetch(URL)
+fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
   .then((res) => {
     if (res.ok) return res.json()
     else throw new Error("Errore HTTP: " + res.status)
@@ -45,5 +47,33 @@ fetch(URL)
         })
       })
       .catch((err) => console.error(err))
+  })
+  .catch((err) => console.error(err))
+
+//popular albums
+
+const topAlbums = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/albums`
+fetch(topAlbums)
+  .then((res) => {
+    if (res.ok) return res.json()
+    else throw new Error("Errore HTTP: " + res.status)
+  })
+  .then((albumData) => {
+    console.log(albums)
+    const albumList = albumData.data.slice(0, 6)
+    albums.innerHTML = ""
+
+    albumList.forEach((album) => {
+      const div = document.createElement("div")
+      div.className = "col-6 text-center mb-3"
+      div.innerHTML = `
+        <a href="album.html?id=${album.id}" class="text-decoration-none text-white">
+          <img src="${album.cover_medium}" alt="${album.title}" class="img-fluid rounded-3 shadow mb-2">
+          <p class="small fw-semibold mb-0">${album.title}</p>
+          <p class="small text-secondary">${album.release_date}</p>
+        </a>
+      `
+      albums.appendChild(div)
+    })
   })
   .catch((err) => console.error(err))

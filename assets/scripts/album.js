@@ -19,11 +19,13 @@ const playPauseBtn = document.getElementById("play-btn")
 const pauseBtn = document.querySelector(".bi-pause-circle-fill")
 const playBtn = document.getElementById("play")
 const footerImg = document.getElementById("footer-img")
+const footer = document.getElementById("player")
 playPause = () => {
   if (audio.paused) {
     audio.play()
     playBtn.classList.add("d-none")
     pauseBtn.classList.remove("d-none")
+    footer.classList.remove("d-none")
   } else {
     audio.pause()
     playBtn.classList.remove("d-none")

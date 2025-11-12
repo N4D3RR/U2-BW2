@@ -26,6 +26,7 @@ const playBtn = document.querySelector(".bi-play-circle-fill")
 
 //   console.log(pauseBtn)
 // })
+
 playPause = () => {
   playBtn.classList.toggle("d-none")
 

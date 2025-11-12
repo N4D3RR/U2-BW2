@@ -11,6 +11,20 @@ const albumDetails = document.getElementById("album-details")
 const trackList = document.getElementById("track-list")
 const artistImg = document.getElementById("artist-img")
 
+// FUNZIONE PLAY/PAUSE
+
+const playPauseBtn = document.getElementById("play-btn")
+const pauseBtn = document.querySelector(".bi-pause-circle-fill")
+const playBtn = document.getElementById("play")
+playPause = () => {
+  playBtn.classList.toggle("d-none")
+  pauseBtn.classList.toggle("d-none")
+}
+playTopBtn = document.getElementById("play-btn-top")
+playTopBtn.style.cursor = "pointer"
+
+// FINE FUNZIONE PLAY/PAUSE
+
 const fetchAlbumData = (id) => {
   fetch(`https://striveschool-api.herokuapp.com/api/deezer/album/${id}`)
     .then((res) => {
@@ -55,15 +69,22 @@ const fetchAlbumData = (id) => {
         trackNumber.textContent = index + 1
 
         const titleDiv = document.createElement("div")
+        titleDiv.style.cursor = "pointer"
 
         titleDiv.className = "d-flex flex-column"
         const trackTitle = document.createElement("p")
+        trackTitle.onclick = () => {
+          playPause()
+        }
         trackTitle.className = "mb-0 fw-semibold"
 
         trackTitle.textContent = track.title
         const trackArtist = document.createElement("p")
         trackArtist.className = "mb-0 text-secondary"
         trackArtist.textContent = track.artist.name
+        trackArtist.addEventListener("click", () => {
+          window.location.assign(`artist.html?id=${album.artist.id}`)
+        })
 
         titleDiv.appendChild(trackTitle)
         titleDiv.appendChild(trackArtist)
@@ -92,14 +113,4 @@ const fetchAlbumData = (id) => {
     .catch((err) => console.error(err))
 }
 
-const playPauseBtn = document.getElementById("play-btn")
-const pauseBtn = document.querySelector(".bi-pause-circle-fill")
-const playBtn = document.getElementById("play")
-playPause = () => {
-  playBtn.classList.toggle("d-none")
-
-  pauseBtn.classList.toggle("d-none")
-}
-playTopBtn = document.getElementById("play-btn-top")
-playTopBtn.style.cursor = "pointer"
 fetchAlbumData(albumId || 75621062)

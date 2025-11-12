@@ -11,3 +11,23 @@ const redirectToAlbumPage = (albumId) => {
   const url = `./album.html?id=${albumId}`
   location.assign(url, albumId)
 }
+
+// play e pausa
+
+const playPauseBtn = document.getElementById("play-btn")
+
+const pauseBtn = document.querySelector(".bi-pause-circle-fill")
+const playBtn = document.querySelector(".bi-play-circle-fill")
+
+// playPauseBtn.addEventListener("click", () => {
+//   playBtn.classList.toggle("d-none")
+
+//   pauseBtn.classList.toggle("d-none")
+
+//   console.log(pauseBtn)
+// })
+playPause = () => {
+  playBtn.classList.toggle("d-none")
+
+  pauseBtn.classList.toggle("d-none")
+}

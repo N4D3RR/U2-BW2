@@ -16,6 +16,7 @@ const artistImg = document.getElementById("artist-img")
 const playPauseBtn = document.getElementById("play-btn")
 const pauseBtn = document.querySelector(".bi-pause-circle-fill")
 const playBtn = document.getElementById("play")
+const footerImg = document.getElementById("footer-img")
 playPause = () => {
   playBtn.classList.toggle("d-none")
   pauseBtn.classList.toggle("d-none")
@@ -75,6 +76,17 @@ const fetchAlbumData = (id) => {
         const trackTitle = document.createElement("p")
         trackTitle.onclick = () => {
           playPause()
+          const footerImg = document.getElementById("footer-img")
+          const footerTitle = document.getElementById("footer-track-title")
+          const footerArtist = document.getElementById("footer-track-artist")
+          const trackDuration = document.getElementById("track-duration")
+          footerImg.src = track.album.cover
+          footerTitle.textContent = track.title
+          footerArtist.textContent = track.artist.name
+          const minutes = Math.floor(track.duration / 60)
+          const seconds = (track.duration % 60).toString().padStart(2, "0")
+
+          trackDuration.textContent = `${minutes}:${seconds}`
         }
         trackTitle.className = "mb-0 fw-semibold"
 

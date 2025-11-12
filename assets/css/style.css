@@ -9,3 +9,9 @@ small {
 #artist-img {
   width: 70%;
 }
+
+#artist-header {
+  background-color: darkgray;
+  background-size: cover;
+  height: 40%;
+}

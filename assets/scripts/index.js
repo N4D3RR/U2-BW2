@@ -1,5 +1,10 @@
 const c1 = document.querySelectorAll(".album")
 
+const redirectToAlbumPage = (albumId) => {
+  const url = `./album.html?id=${albumId}`
+  location.assign(url, albumId)
+}
+
 c1.forEach((card) => {
   card.style.cursor = "pointer"
   card.addEventListener("click", () => {
@@ -7,10 +12,6 @@ c1.forEach((card) => {
     window.location.assign(`album.html?id=${albumId}`) //apro album.html con l'id dell'album
   })
 })
-const redirectToAlbumPage = (albumId) => {
-  const url = `./album.html?id=${albumId}`
-  location.assign(url, albumId)
-}
 
 // play e pausa
 

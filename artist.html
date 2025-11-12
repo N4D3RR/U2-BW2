@@ -290,6 +290,39 @@
             </ul>
           </div>
         </div>
+        <!-- SEZIONE ARTISTA -->
+        <div class="row mx-3 py-4" id="artist-header">
+          <div class="col col-4 d-flex flex-column justify-content-end">
+            <p>
+              <i class="bi bi-patch-check-fill text-primary me-1"></i>Artista
+              Verificato
+            </p>
+            <h1 id="artist-name" class="display-5 fw-bold">ARTISTA</h1>
+            <p id="monthly-viewers">123456 ascoltatori</p>
+          </div>
+        </div>
+        <div class="container bg-black bg-gradient">
+          <div class="row ms-3">
+            <div class="col my-3 d-flex align-items-center">
+              <i
+                id="play-btn-top"
+                class="bi bi-play-circle-fill text-white py-0 fs-3"
+                onclick="playPause()"
+              ></i>
+              <button type="button" class="btn btn-primary mx-4">FOLLOW</button>
+              <i class="bi bi-three-dots text-white py-0 fs-3"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div id="popoular-song" class="col col-8">
+              <h3>Popolari</h3>
+              <ol id="songs"></ol>
+            </div>
+            <div id="other-album" class="col col-4">
+              <h3>Altri album simili</h3>
+            </div>
+          </div>
+        </div>
       </main>
 
       <!-- ASIDE DESTRA -->

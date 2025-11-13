@@ -7,11 +7,33 @@ small {
   letter-spacing: 1px;
 }
 #artist-img {
-  width: 70%;
+  width: 40%;
 }
 
 #artist-header {
   background-color: darkgray;
-  /*background-size: ;*/
-  height: 40%;
+  height: 50vh;
+  max-height: 350px;
+  position: relative;
+  background-position: center 20%; /* più in alto */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#artist-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(
+    /* CAMBIA PER AVERE PIU O MENO TRASPARENZA */ 0,
+    0,
+    0,
+    0.7
+  );
+  z-index: 0;
+}
+
+#artist-header > * {
+  position: relative;
+  z-index: 1;
 }

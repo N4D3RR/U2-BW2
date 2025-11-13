@@ -37,3 +37,6 @@ small {
   position: relative;
   z-index: 1;
 }
+a p {
+  cursor: pointer;
+}

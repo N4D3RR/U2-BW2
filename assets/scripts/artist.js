@@ -10,6 +10,16 @@ const artistHeader = document.getElementById("artist-header")
 
 // FUNZIONE PLAY/PAUSE
 const audio = document.getElementById("audio-player")
+const progressBar = document.getElementById("progress-bar")
+
+audio.addEventListener("timeupdate", () => {
+  if (audio.duration) {
+    const progress = (audio.currentTime / audio.duration) * 100
+    progressBar.style.width = `${progress}%`
+    progressBar.setAttribute("aria-valuenow", progress)
+    console.log(progress)
+  }
+})
 
 const pauseBtn = document.getElementById("pause-btn")
 const playBtn = document.getElementById("play")

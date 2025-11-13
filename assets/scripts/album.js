@@ -12,6 +12,16 @@ const trackList = document.getElementById("track-list")
 const artistImg = document.getElementById("artist-img")
 
 const audio = document.getElementById("audio-player")
+const progressBar = document.getElementById("progress-bar")
+
+audio.addEventListener("timeupdate", () => {
+  if (audio.duration) {
+    const progress = (audio.currentTime / audio.duration) * 100
+    progressBar.style.width = `${progress}%`
+    progressBar.setAttribute("aria-valuenow", progress)
+    console.log(progress)
+  }
+})
 
 // FUNZIONE PLAY/PAUSE
 

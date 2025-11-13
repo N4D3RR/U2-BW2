@@ -121,3 +121,21 @@ fetch(topAlbums)
     })
   })
   .catch((err) => console.error(err))
+
+
+//BOTTONE FOLLOW
+const followBtn = document.querySelector(".btn.btn-primary");
+
+followBtn.addEventListener("click", () => {
+  if (!followBtn.classList.contains("btn-outline-light")) {
+    followBtn.classList.remove("btn-primary");   
+    followBtn.classList.add("btn-outline-light"); 
+    followBtn.textContent = "FOLLOWED";          
+  } else {
+    followBtn.classList.remove("btn-outline-light");
+    followBtn.classList.add("btn-primary");
+    followBtn.textContent = "FOLLOW";
+  }
+});
+
+

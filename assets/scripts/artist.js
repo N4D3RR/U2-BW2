@@ -8,11 +8,16 @@ const songs = document.getElementById("songs")
 const albums = document.getElementById("other-album")
 const artistHeader = document.getElementById("artist-header")
 
+// FUNZIONE PLAY/PAUSE
+
+const audio = document.getElementById("audio-player")
+const playBtn = document.getElementById("play")
 const playPauseBtn = document.getElementById("play-btn")
 const pauseBtn = document.querySelector(".bi-pause-circle-fill")
-const playBtn = document.getElementById("play")
+
 const footerImg = document.getElementById("footer-img")
 const footer = document.getElementById("player")
+
 playPause = () => {
   if (audio.paused) {
     audio.play()
@@ -25,6 +30,8 @@ playPause = () => {
     pauseBtn.classList.add("d-none")
   }
 }
+playTopBtn = document.getElementById("play-btn-top")
+playTopBtn.style.cursor = "pointer"
 
 fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
   .then((res) => {
@@ -58,8 +65,27 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
           trackNumber.className = "text-secondary small"
           trackNumber.textContent = index + 1
           li.innerHTML = `${trackNumber.innerText} <img src="${track.album.cover_small}" alt="album-img" class="rounded rounded-3 shadow ms-3">
-          <span class="col col-7 ms-2 "> ${track.title}</span><span class="col col-3"> ${track.rank} ascolti</span>
-<span class="col col-2"> ${minutes}:${seconds} </span>`
+          <span class="col col-7 ms-2 track-title"> ${track.title}</span>
+          <span class="col col-3"> ${track.rank} ascolti</span>
+          <span class="col col-2"> ${minutes}:${seconds} </span>`
+
+          const tracksTitle = li.querySelector(".track-title")
+          tracksTitle.style.cursor = "pointer"
+          tracksTitle.addEventListener("click", () => {
+            const footerImg = document.getElementById("footer-img")
+            const footerTitle = document.getElementById("footer-track-title")
+            const footerArtist = document.getElementById("footer-track-artist")
+            const trackDuration = document.getElementById("track-duration")
+            footerImg.src = track.album.cover
+            footerTitle.textContent = track.title
+            footerArtist.textContent = track.artist.name
+            const minutes = Math.floor(track.duration / 60)
+            const seconds = (track.duration % 60).toString().padStart(2, "0")
+            trackDuration.textContent = `${minutes}:${seconds}`
+            audio.src = track.preview
+            playPause()
+          })
+
           console.log(li)
           songs.appendChild(li)
         })
@@ -95,3 +121,21 @@ fetch(topAlbums)
     })
   })
   .catch((err) => console.error(err))
+
+
+//BOTTONE FOLLOW
+const followBtn = document.querySelector(".btn.btn-primary");
+
+followBtn.addEventListener("click", () => {
+  if (!followBtn.classList.contains("btn-outline-light")) {
+    followBtn.classList.remove("btn-primary");   
+    followBtn.classList.add("btn-outline-light"); 
+    followBtn.textContent = "FOLLOWED";          
+  } else {
+    followBtn.classList.remove("btn-outline-light");
+    followBtn.classList.add("btn-primary");
+    followBtn.textContent = "FOLLOW";
+  }
+});
+
+

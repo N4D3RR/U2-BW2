@@ -12,10 +12,10 @@ small {
 
 #artist-header {
   background-color: darkgray;
-  height: 50vh;
+  height: 60vh;
   max-height: 350px;
   position: relative;
-  background-position: center 20%; /* più in alto */
+  background-position: center 20%;
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -12,6 +12,7 @@ const audio = document.getElementById("audio-player")
 const progressBar = document.getElementById("progress-bar")
 
 // FUNZIONE AVANZAMENTO PROGRESSBAR
+const currentTime = document.getElementById("time")
 
 audio.addEventListener("timeupdate", () => {
   if (audio.duration) {
@@ -19,6 +20,11 @@ audio.addEventListener("timeupdate", () => {
     progressBar.style.width = `${progress}%`
     progressBar.setAttribute("aria-valuenow", progress)
     console.log(progress)
+    const currentMinutes = Math.floor(audio.currentTime / 60)
+    const currentSeconds = Math.floor(audio.currentTime % 60)
+      .toString()
+      .padStart(2, "0")
+    currentTime.innerText = `${currentMinutes}:${currentSeconds}`
   }
 })
 
@@ -93,7 +99,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
           li.innerHTML = `${trackNumber.innerText} <img src="${track.album.cover_small}" alt="album-img" class="rounded rounded-3 shadow ms-3">
           <span class="col col-7 ms-2 track-title"> ${track.title}</span>
           <span class="col col-3"> ${track.rank} ascolti</span>
-          <span class="col col-2"> ${minutes}:${seconds} </span>`
+          <span class="col col-1"> ${minutes}:${seconds} </span>`
 
           const tracksTitle = li.querySelector(".track-title")
           tracksTitle.style.cursor = "pointer"

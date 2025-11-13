@@ -16,12 +16,19 @@ const progressBar = document.getElementById("progress-bar")
 
 // FUNZIONE AVANZAMENTO PROGRESSBAR
 
+const currentTime = document.getElementById("time")
+
 audio.addEventListener("timeupdate", () => {
   if (audio.duration) {
     const progress = (audio.currentTime / audio.duration) * 100
     progressBar.style.width = `${progress}%`
     progressBar.setAttribute("aria-valuenow", progress)
     console.log(progress)
+    const currentMinutes = Math.floor(audio.currentTime / 60)
+    const currentSeconds = Math.floor(audio.currentTime % 60)
+      .toString()
+      .padStart(2, "0")
+    currentTime.innerText = `${currentMinutes}:${currentSeconds}`
   }
 })
 

@@ -8,8 +8,31 @@ const songs = document.getElementById("songs")
 const albums = document.getElementById("other-album")
 const artistHeader = document.getElementById("artist-header")
 
-// FUNZIONE PLAY/PAUSE
 const audio = document.getElementById("audio-player")
+const progressBar = document.getElementById("progress-bar")
+
+// FUNZIONE AVANZAMENTO PROGRESSBAR
+
+audio.addEventListener("timeupdate", () => {
+  if (audio.duration) {
+    const progress = (audio.currentTime / audio.duration) * 100
+    progressBar.style.width = `${progress}%`
+    progressBar.setAttribute("aria-valuenow", progress)
+    console.log(progress)
+  }
+})
+
+//FUNZIONE AVANZAMENTO ALLA PRESSIONE DELLA BAR
+const progressContainer = progressBar.parentElement
+
+progressContainer.addEventListener("click", (e) => {
+  const width = progressContainer.clientWidth
+  const clickX = e.offsetX
+  const newTime = (clickX / width) * audio.duration
+  audio.currentTime = newTime
+})
+
+// FUNZIONE PLAY/PAUSE
 
 const pauseBtn = document.getElementById("pause-btn")
 const playBtn = document.getElementById("play")

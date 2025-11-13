@@ -9,25 +9,28 @@ const albums = document.getElementById("other-album")
 const artistHeader = document.getElementById("artist-header")
 
 // FUNZIONE PLAY/PAUSE
-
 const audio = document.getElementById("audio-player")
-const playBtn = document.getElementById("play")
-const playPauseBtn = document.getElementById("play-btn")
-const pauseBtn = document.querySelector(".bi-pause-circle-fill")
 
+const pauseBtn = document.getElementById("pause-btn")
+const playBtn = document.getElementById("play")
 const footerImg = document.getElementById("footer-img")
 const footer = document.getElementById("player")
-
+const playBtnTop = document.getElementById("play-btn-top")
+const pauseBtnTop = document.getElementById("pause-btn-top")
 playPause = () => {
   if (audio.paused) {
     audio.play()
     playBtn.classList.add("d-none")
+    playBtnTop.classList.add("d-none")
     pauseBtn.classList.remove("d-none")
+    pauseBtnTop.classList.remove("d-none")
     footer.classList.remove("d-none")
   } else {
     audio.pause()
     playBtn.classList.remove("d-none")
+    playBtnTop.classList.remove("d-none")
     pauseBtn.classList.add("d-none")
+    pauseBtnTop.classList.add("d-none")
   }
 }
 playTopBtn = document.getElementById("play-btn-top")
@@ -122,20 +125,17 @@ fetch(topAlbums)
   })
   .catch((err) => console.error(err))
 
-
 //BOTTONE FOLLOW
-const followBtn = document.querySelector(".btn.btn-primary");
+const followBtn = document.querySelector(".btn.btn-primary")
 
 followBtn.addEventListener("click", () => {
   if (!followBtn.classList.contains("btn-outline-light")) {
-    followBtn.classList.remove("btn-primary");   
-    followBtn.classList.add("btn-outline-light"); 
-    followBtn.textContent = "FOLLOWED";          
+    followBtn.classList.remove("btn-primary")
+    followBtn.classList.add("btn-outline-light")
+    followBtn.textContent = "FOLLOWED"
   } else {
-    followBtn.classList.remove("btn-outline-light");
-    followBtn.classList.add("btn-primary");
-    followBtn.textContent = "FOLLOW";
+    followBtn.classList.remove("btn-outline-light")
+    followBtn.classList.add("btn-primary")
+    followBtn.textContent = "FOLLOW"
   }
-});
-
-
+})

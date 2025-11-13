@@ -327,7 +327,12 @@
             <div class="col my-3 d-flex align-items-center">
               <i
                 id="play-btn-top"
-                class="bi bi-play-circle-fill text-white py-0 fs-3"
+                class="bi bi-play-circle-fill text-white py-0 fs-3 me-3"
+                onclick="playPause()"
+              ></i>
+              <i
+                id="pause-btn-top"
+                class="bi bi-pause-circle-fill text-white py-0 fs-3 me-3 d-none"
                 onclick="playPause()"
               ></i>
               <button type="button" class="btn btn-primary mx-4">FOLLOW</button>
@@ -436,14 +441,16 @@
             <button class="btn btn-link text-white">
               <i class="bi bi-skip-start-fill"></i>
             </button>
-            <button
-              id="play-btn"
-              class="btn btn-link pb-3 text-light"
+            <i
+              id="play"
+              class="btn btn-link text-light bi bi-play-circle-fill fs-2"
               onclick="playPause()"
-            >
-              <i id="play" class="bi bi-play-circle-fill fs-2"></i>
-              <i class="bi bi-pause-circle-fill fs-2 d-none"></i>
-            </button>
+            ></i>
+            <i
+              id="pause-btn"
+              class="btn btn-link text-light bi bi-pause-circle-fill fs-2"
+              onclick="playPause()"
+            ></i>
             <button class="btn btn-link text-white">
               <i class="bi bi-skip-end-fill"></i>
             </button>

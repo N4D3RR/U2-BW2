@@ -15,6 +15,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
   </head>
   <body class="d-flex flex-column vh-100 bg-dark">
     <!-- CON G-0 TOGLIAMO IL GAP E NON SFORA -->
@@ -43,13 +44,14 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="bi bi-search pe-1"></i>
+              <i class="btn p-0 bi bi-search"></i>
               <p class="fw-bold d-inline-block ps-2">Cerca</p>
             </a>
             <ul class="dropdown-menu bg-black">
               <li>
-                <form class="d-flex" role="search">
+                <form class="d-flex" role="search" id="search-form">
                   <input
+                    id="search-input"
                     class="form-control me-2"
                     type="search"
                     placeholder="Cerca"
@@ -275,80 +277,89 @@
       <main
         class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1 overflow-auto pb-5"
       >
-        <!-- SEZIONE ARTISTA -->
-        <div class="row py-4" id="artist-header">
-          <div
-            class="d-flex justify-content-between align-items-start my-2 d-none d-md-flex px-4"
-          >
-            <div>
-              <i class="bi bi-chevron-left rounded-5 p-1 bg-black me-2"></i>
-              <i class="bi bi-chevron-right rounded-5 p-1 bg-black"></i>
+        <section id="search-list" class="row justify-content-center">
+          <div id="result"></div>
+        </section>
+        <div id="main-content">
+          <!-- SEZIONE ARTISTA -->
+          <div class="row py-4" id="artist-header">
+            <div
+              class="d-flex justify-content-between align-items-start my-2 d-none d-md-flex px-4"
+            >
+              <div>
+                <i class="bi bi-chevron-left rounded-5 p-1 bg-black me-2"></i>
+                <i class="bi bi-chevron-right rounded-5 p-1 bg-black"></i>
+              </div>
+              <div class="dropdown">
+                <button
+                  class="btn rounded-5 btn-dark bg-black dropdown-toggle p-0 ps-1 pe-2 py-1"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://placecats.com/25/25"
+                    alt="user-logo"
+                    class="rounded-5"
+                  />
+                  <small class="fw-bold">(Pupo)Enzo Ghinazzi...</small>
+                </button>
+                <ul class="dropdown-menu bg-black">
+                  <li>
+                    <a class="dropdown-item text-light" href="#">Action</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-light" href="#"
+                      >Another action</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-light" href="#"
+                      >Something else here</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="dropdown">
-              <button
-                class="btn rounded-5 btn-dark bg-black dropdown-toggle p-0 ps-1 pe-2 py-1"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src="https://placecats.com/25/25"
-                  alt="user-logo"
-                  class="rounded-5"
-                />
-                <small class="fw-bold">(Pupo)Enzo Ghinazzi...</small>
-              </button>
-              <ul class="dropdown-menu bg-black">
-                <li><a class="dropdown-item text-light" href="#">Action</a></li>
-                <li>
-                  <a class="dropdown-item text-light" href="#"
-                    >Another action</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item text-light" href="#"
-                    >Something else here</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col col-4 d-flex flex-column justify-content-end ms-4">
-            <p>
-              <i class="bi bi-patch-check-fill text-primary me-1"></i>Artista
-              Verificato
-            </p>
-            <h1 id="artist-name" class="display-5 fw-bold">ARTISTA</h1>
-            <p id="monthly-viewers">123456 ascoltatori</p>
-          </div>
-        </div>
-        <div class="container bg-black bg-gradient">
-          <div class="row ms-3">
-            <div class="col my-3 d-flex align-items-center">
-              <i
-                id="play-btn-top"
-                class="bi bi-play-circle-fill text-white py-0 fs-3 me-3"
-                onclick="playPause()"
-              ></i>
-              <i
-                id="pause-btn-top"
-                class="bi bi-pause-circle-fill text-white py-0 fs-3 me-3 d-none"
-                onclick="playPause()"
-              ></i>
-              <button type="button" class="btn btn-primary mx-4">FOLLOW</button>
-              <i class="bi bi-three-dots text-white py-0 fs-3"></i>
+            <div class="col col-4 d-flex flex-column justify-content-end ms-4">
+              <p>
+                <i class="bi bi-patch-check-fill text-primary me-1"></i>Artista
+                Verificato
+              </p>
+              <h1 id="artist-name" class="display-5 fw-bold">ARTISTA</h1>
+              <p id="monthly-viewers">123456 ascoltatori</p>
             </div>
           </div>
-          <div class="row">
-            <div id="popoular-song" class="col">
-              <h3>Popolari</h3>
-              <ol id="songs"></ol>
+          <div class="container-fluid bg-black bg-gradient">
+            <div class="row ms-3">
+              <div class="col my-3 d-flex align-items-center">
+                <i
+                  id="play-btn-top"
+                  class="bi bi-play-circle-fill text-white py-0 fs-3 me-3"
+                  onclick="playPause()"
+                ></i>
+                <i
+                  id="pause-btn-top"
+                  class="bi bi-pause-circle-fill text-white py-0 fs-3 me-3 d-none"
+                  onclick="playPause()"
+                ></i>
+                <button type="button" class="btn btn-primary mx-4">
+                  FOLLOW
+                </button>
+                <i class="bi bi-three-dots text-white py-0 fs-3"></i>
+              </div>
             </div>
+            <div class="row">
+              <div id="popoular-song" class="col">
+                <h3>Popolari</h3>
+                <ol id="songs"></ol>
+              </div>
+            </div>
+            <section class="mt-4">
+              <h3 class="text-white mb-3">Altri album</h3>
+              <div id="other-album" class="row"></div>
+            </section>
           </div>
-          <section class="mt-4">
-            <h3 class="text-white mb-3">Altri album</h3>
-            <div id="other-album" class="row"></div>
-          </section>
         </div>
       </main>
 

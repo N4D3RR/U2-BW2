@@ -98,7 +98,7 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}`)
           trackNumber.textContent = index + 1
           li.innerHTML = `${trackNumber.innerText} <img src="${track.album.cover_small}" alt="album-img" class="rounded rounded-3 shadow ms-3">
           <span class="col col-7 ms-2 track-title"> ${track.title}</span>
-          <span class="col col-3"> ${track.rank} ascolti</span>
+          <span class="col col-3 d-none d-lg-block"> ${track.rank} ascolti</span>
           <span class="col col-1"> ${minutes}:${seconds} </span>`
 
           const tracksTitle = li.querySelector(".track-title")

@@ -15,21 +15,26 @@ const audio = document.getElementById("audio-player")
 
 // FUNZIONE PLAY/PAUSE
 
-const playPauseBtn = document.getElementById("play-btn")
-const pauseBtn = document.querySelector(".bi-pause-circle-fill")
+const pauseBtn = document.getElementById("pause-btn")
 const playBtn = document.getElementById("play")
 const footerImg = document.getElementById("footer-img")
 const footer = document.getElementById("player")
+const playBtnTop = document.getElementById("play-btn-top")
+const pauseBtnTop = document.getElementById("pause-btn-top")
 playPause = () => {
   if (audio.paused) {
     audio.play()
     playBtn.classList.add("d-none")
+    playBtnTop.classList.add("d-none")
     pauseBtn.classList.remove("d-none")
+    pauseBtnTop.classList.remove("d-none")
     footer.classList.remove("d-none")
   } else {
     audio.pause()
     playBtn.classList.remove("d-none")
+    playBtnTop.classList.remove("d-none")
     pauseBtn.classList.add("d-none")
+    pauseBtnTop.classList.add("d-none")
   }
 }
 playTopBtn = document.getElementById("play-btn-top")

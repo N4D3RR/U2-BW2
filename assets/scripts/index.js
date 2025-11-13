@@ -33,3 +33,8 @@ playPause = () => {
 
   pauseBtn.classList.toggle("d-none")
 }
+const bell = document.getElementById("bell")
+bell.addEventListener("click", () => {
+  bell.classList.toggle("bi-bell")
+  bell.classList.toggle("bi-bell-fill")
+})

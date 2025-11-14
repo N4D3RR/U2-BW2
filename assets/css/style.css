@@ -47,3 +47,14 @@ small {
 a p {
   cursor: pointer;
 }
+
+#footer-track-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#bottom-navbar form {
+  width: 75vw;
+  text-align: center;
+}

@@ -42,3 +42,9 @@ restoreBtn.addEventListener("click", function () {
   annuncio.classList.add("d-md-flex")
   restoreDiv.classList.remove("d-md-block")
 })
+
+const cerca = document.getElementById("cerca")
+cerca.addEventListener("click", () => {
+  cerca.classList.toggle("text-secondary")
+  cerca.classList.toggle("text-white")
+})

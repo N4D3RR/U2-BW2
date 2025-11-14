@@ -32,7 +32,7 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link d-flex align-items-center gap-2 text-white"
+              class="nav-link d-flex align-items-center gap-2 text-secondary"
               href="index.html"
               ><i class="bi bi-house-door-fill me-2"></i>Home</a
             >
@@ -40,12 +40,12 @@
           <!--RICERCA-->
           <li class="nav-item dropdown pb-0 py-2">
             <a
-              class="p-0 ps-3 pe-2 py-1 text-decoration-none text-light"
+              class="p-0 ps-3 pe-2 py-1 text-decoration-none text-secondary"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <i class="btn p-0 bi bi-search"></i>
-              <p class="fw-bold d-inline-block ps-2">Cerca</p>
+              <p id="cerca" class="fw-bold d-inline-block ps-2">Cerca</p>
             </a>
             <ul class="dropdown-menu bg-black">
               <li>
@@ -275,7 +275,7 @@
       <!-- MAIN -->
 
       <main
-        class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1 overflow-auto pb-5"
+        class="col-12 col-md-7 bg-dark bg-gradient text-light flex-column flex-grow-1 overflow-auto"
       >
         <section id="search-list" class="row justify-content-center">
           <div id="result"></div>
@@ -360,10 +360,6 @@
               <div id="other-album" class="row"></div>
             </section>
           </div>
-          <section class="mt-4">
-            <h3 class="text-white mb-3">Altri album</h3>
-            <div id="other-album" class="row g-0"></div>
-          </section>
         </div>
       </main>
 
@@ -432,31 +428,85 @@
         </div>
       </aside>
     </div>
+    <ul
+      id="bottom-navbar"
+      class="d-md-none nav d-flex fw-bold justify-content-between align-items-baseline pt-2"
+    >
+      <li class="nav-item">
+        <a
+          class="nav-link d-flex align-items-center text-white d-flex flex-column"
+          href="index.html"
+          ><i class="bi bi-house-door-fill me-2"></i>Home</a
+        >
+      </li>
+      <!--RICERCA-->
+      <li class="nav-item dropdown-center pb-0">
+        <a
+          class="p-0 ps-3 pe-2 py-1 text-decoration-none text-light d-flex flex-column"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="btn p-0 bi bi-search text-light"></i>
+          <p class="fw-bold d-inline-block ps-2">Cerca</p>
+        </a>
+        <ul class="dropdown-menu bg-dark">
+          <li>
+            <form class="d-flex" role="search" id="search-form-bottom">
+              <input
+                id="search-input-bottom"
+                class="form-control me-2 w-100"
+                type="search"
+                placeholder="Cerca"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Cerca
+              </button>
+            </form>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item mb-3">
+        <a
+          class="nav-link d-flex align-items-center text-secondary pt-0 d-flex flex-column"
+          href="#"
+          ><i class="bi bi-collection me-2"></i>La tua libreria</a
+        >
+      </li>
+    </ul>
     <footer
       id="player"
       class="bg-dark text-white fixed-bottom border-top border-secondary d-none"
     >
       <div class="d-flex align-items-center justify-content-between">
         <div class="mw-100 text-white d-flex align-items-center">
-          <img id="footer-img" src="" alt="album-cover" class="img-fluid" />
+          <img
+            id="footer-img"
+            src=""
+            alt="album-cover"
+            class="img-fluid d-none d-md-flex"
+          />
           <div class="ms-2 d-flex align-items-center">
-            <div class="d-inline-block d-none d-md-block">
-              <span id="footer-track-title"></span> <br /><span
-                id="footer-track-artist"
-              ></span>
+            <div
+              id="footer-track-artist-title"
+              class="d-inline-block text-truncate"
+            >
+              <span id="footer-track-title"></span>
+              <br /><span id="footer-track-artist"></span>
             </div>
-            <button class="btn btn-link text-white">
+            <button class="btn btn-link text-white d-none d-md-flex">
               <i class="bi bi-heart"></i>
             </button>
           </div>
         </div>
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-md-column">
           <div class="d-flex align-items-center">
-            <button class="btn btn-link text-white">
-              <i class="bi bi-shuffle"></i>
+            <button class="btn btn-link text-white d-none d-md-block">
+              <i class="bi bi-shuffle d-none d-md-block"></i>
             </button>
-            <button class="btn btn-link text-white">
-              <i class="bi bi-skip-start-fill"></i>
+            <button class="btn btn-link text-white d-none d-md-block">
+              <i class="bi bi-skip-start-fill d-none d-md-block"></i>
             </button>
             <i
               id="play"
@@ -468,21 +518,24 @@
               class="btn btn-link text-light bi bi-pause-circle-fill fs-2"
               onclick="playPause()"
             ></i>
-            <button class="btn btn-link text-white">
-              <i class="bi bi-skip-end-fill"></i>
+            <button class="btn btn-link text-white d-none d-md-block">
+              <i class="bi bi-skip-end-fill d-none d-md-block"></i>
             </button>
-            <button class="btn btn-link text-white">
-              <i class="bi bi-repeat"></i>
+            <button class="btn btn-link text-white d-none d-md-block">
+              <i class="bi bi-repeat d-none d-sm-block"></i>
             </button>
           </div>
           <div
             class="d-flex align-items-center justify-content-center text-white gap-2"
           >
-            <span id="time" class="small">0:00</span>
-            <div class="progress flex-grow-1 bg-secondary" style="height: 4px">
+            <span id="time" class="small d-none d-md-block">0:00</span>
+            <div
+              class="progress flex-grow-1 bg-secondary d-none d-sm-flex"
+              style="height: 4px"
+            >
               <div
                 id="progress-bar"
-                class="progress-bar bg-white"
+                class="progress-bar bg-white d-none d-md-block"
                 role="progressbar"
                 style="width: 0%"
                 aria-valuenow="25"
@@ -490,10 +543,10 @@
                 aria-valuemax="100"
               ></div>
             </div>
-            <span id="track-duration" class="small"></span>
+            <span id="track-duration" class="small d-none d-md-block"></span>
           </div>
         </div>
-        <div class="d-flex align-items-center d-none d-sm-flex">
+        <div class="d-flex align-items-center d-none d-md-flex">
           <button class="btn btn-link text-white">
             <i class="bi bi-mic"></i>
           </button>
@@ -504,7 +557,7 @@
             <i class="bi bi-speaker"></i>
           </button>
           <button
-            class="btn btn-link text-white d-flex align-items-center gap-2 p-0"
+            class="btn btn-link text-white d-flex align-items-center gap-2 p-0 d-none d-md-block"
           >
             <i class="bi bi-volume-up-fill text-white fs-4"></i>
             <div
@@ -521,7 +574,7 @@
               ></div>
             </div>
           </button>
-          <button class="btn btn-link text-white">
+          <button class="btn btn-link text-white d-none d-md-block">
             <i class="bi bi-arrows-angle-expand"></i>
           </button>
         </div>

@@ -17,8 +17,8 @@ c1.forEach((card) => {
 
 const playPauseBtn = document.getElementById("play-btn")
 
-const pauseBtn = document.querySelector(".bi-pause-circle-fill")
-const playBtn = document.querySelector(".bi-play-circle-fill")
+let pauseBtn = document.querySelector(".bi-pause-circle-fill")
+let playBtn = document.querySelector(".bi-play-circle-fill")
 
 // playPauseBtn.addEventListener("click", () => {
 //   playBtn.classList.toggle("d-none")

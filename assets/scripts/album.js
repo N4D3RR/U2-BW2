@@ -181,3 +181,9 @@ cerca.addEventListener("click", () => {
   cerca.classList.toggle("text-secondary")
   cerca.classList.toggle("text-white")
 })
+
+const cercaBottom = document.getElementById("cercaBottom")
+cercaBottom.addEventListener("click", () => {
+  cercaBottom.classList.toggle("text-secondary")
+  cercaBottom.classList.toggle("text-white")
+})

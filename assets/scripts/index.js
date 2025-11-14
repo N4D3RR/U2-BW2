@@ -30,6 +30,11 @@ bell.addEventListener("click", () => {
   bell.classList.toggle("bi-bell")
   bell.classList.toggle("bi-bell-fill")
 })
+const heart = document.getElementById("heart")
+heart.addEventListener("click", () => {
+  heart.classList.toggle("bi-heart")
+  heart.classList.toggle("bi-heart-fill")
+})
 const annuncio = document.getElementById("annuncio")
 const hideBtn = document.getElementById("hideBtn")
 const restoreDiv = document.getElementById("restoreDiv")
@@ -47,4 +52,10 @@ const cerca = document.getElementById("cerca")
 cerca.addEventListener("click", () => {
   cerca.classList.toggle("text-secondary")
   cerca.classList.toggle("text-white")
+})
+
+const cercaBottom = document.getElementById("cercaBottom")
+cercaBottom.addEventListener("click", () => {
+  cercaBottom.classList.toggle("text-secondary")
+  cercaBottom.classList.toggle("text-white")
 })

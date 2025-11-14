@@ -142,6 +142,7 @@ const fetchAlbumData = (id) => {
         const trackArtist = document.createElement("p")
         trackArtist.className = "mb-0 text-secondary"
         trackArtist.textContent = track.artist.name
+        trackArtist.style.cursor = "pointer"
         trackArtist.addEventListener("click", () => {
           window.location.assign(`artist.html?id=${album.artist.id}`)
         })

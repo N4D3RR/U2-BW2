@@ -466,7 +466,12 @@
     >
       <div class="d-flex align-items-center justify-content-between">
         <div class="mw-100 text-white d-flex align-items-center">
-          <img id="footer-img" src="" alt="album-cover" class="img-fluid" />
+          <img
+            id="footer-img"
+            src=""
+            alt="album-cover"
+            class="img-fluid d-none d-lg-flex"
+          />
           <div class="ms-2 d-flex align-items-center">
             <div class="d-inline-block d-none d-md-block">
               <span id="footer-track-title"></span> <br /><span
@@ -481,10 +486,10 @@
         <div class="d-flex flex-column">
           <div class="d-flex align-items-center">
             <button class="btn btn-link text-white">
-              <i class="bi bi-shuffle"></i>
+              <i class="bi bi-shuffle d-none d-lg-block"></i>
             </button>
             <button class="btn btn-link text-white">
-              <i class="bi bi-skip-start-fill"></i>
+              <i class="bi bi-skip-start-fill d-block d-lg-block"></i>
             </button>
             <i
               id="play"

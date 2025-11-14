@@ -1,5 +1,6 @@
 ;(() => {
   const searchForm = document.getElementById("search-form")
+  const searchFormBottom = document.getElementById("search-form-bottom")
   const mainContent = document.getElementById("main-content")
   const searchList = document.getElementById("search-list")
   const result = document.getElementById("result")
@@ -31,10 +32,21 @@
     mainContent.classList.add("d-none")
     search()
   })
+  searchFormBottom.addEventListener("submit", function (e) {
+    e.preventDefault()
+    mainContent.classList.add("d-none")
+    search()
+  })
   const search = function () {
     const searchInput = document.getElementById("search-input").value
+    const searchInputBottom = document.getElementById(
+      "search-input-bottom"
+    ).value
+
     console.log(searchInput)
-    const API = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`
+    const API = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${
+      searchInput || searchInputBottom
+    }`
     fetch(API)
       .then((res) => {
         if (res.ok) {

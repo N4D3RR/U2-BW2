@@ -46,6 +46,7 @@ const footerImg = document.getElementById("footer-img")
 const footer = document.getElementById("player")
 const playBtnTop = document.getElementById("play-btn-top")
 const pauseBtnTop = document.getElementById("pause-btn-top")
+const footerNavbar = document.getElementById("bottom-navbar")
 playPause = () => {
   if (audio.paused) {
     audio.play()
@@ -54,6 +55,7 @@ playPause = () => {
     pauseBtn.classList.remove("d-none")
     pauseBtnTop.classList.remove("d-none")
     footer.classList.remove("d-none")
+    footerNavbar.style.paddingBottom = "70px"
   } else {
     audio.pause()
     playBtn.classList.remove("d-none")

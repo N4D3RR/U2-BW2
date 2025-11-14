@@ -15,14 +15,14 @@ c1.forEach((card) => {
 
 // play e pausa
 
-const playPauseBtn = document.getElementById("play-btn")
+const footerNavbar = document.getElementById("bottom-navbar")
 
+const playPauseBtn = document.getElementById("play-btn")
 const pauseBtn = document.querySelector(".bi-pause-circle-fill")
 const playBtn = document.querySelector(".bi-play-circle-fill")
 
 playPause = () => {
   playBtn.classList.toggle("d-none")
-
   pauseBtn.classList.toggle("d-none")
 }
 const bell = document.getElementById("bell")

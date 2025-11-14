@@ -12,16 +12,20 @@
 
   const footerImg = document.getElementById("footer-img")
   const footer = document.getElementById("player")
+  const footerNavbar = document.getElementById("bottom-navbar")
+
   playPause = () => {
     if (audio.paused) {
       audio.play()
       playBtn.classList.add("d-none")
       pauseBtn.classList.remove("d-none")
       footer.classList.remove("d-none")
+      footerNavbar.style.paddingBottom = "70px"
     } else {
       audio.pause()
       playBtn.classList.remove("d-none")
       pauseBtn.classList.add("d-none")
+      footerNavbar.style.removeProperty("paddingBottom")
     }
   }
   playBtn.style.cursor = "pointer"

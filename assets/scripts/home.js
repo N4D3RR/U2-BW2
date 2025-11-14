@@ -45,36 +45,35 @@ const search = function () {
       data.data.slice(0, 10).forEach((track) => {
         result.innerHTML += `<div class="card mb-3">
     <div class="row g-0">
-      <div class="col-md-4">
-        <img src="${track.album.cover}" class="img-fluid rounded-start h-100" alt="${track.title}">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-        <h5 style="cursor:pointer;" class="play-track card-title" 
+        <div class="col-md-4">
+          <img src="${track.album.cover}" class="img-fluid rounded-start h-100" alt="${track.title}">
+            </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 style="cursor:pointer;" class="play-track card-title" 
                     data-preview="${track.preview}"
                     data-title="${track.title}"
                     data-artist="${track.artist.name}"
                     data-cover="${track.album.cover}"
                     data-duration="${track.duration}">
-                  ${track.title}
-                </h5>
-          <p class="card-text">
-            <a href="artist.html?id=${track.artist.id}"class="text-decoration-none text-dark fw-semibold">
-              ${track.artist.name}
-            </a>
-          </p>
-          <p class="card-text">
-            <small class="text-body-secondary">
-              <a href="album.html?id=${track.album.id}" class="text-decoration-none text-secondary">
-                ${track.album.title}
-              </a>
-            </small>
-          </p>
+                    ${track.title}
+                  </h5>
+                  <p class="card-text">
+                  <a href="artist.html?id=${track.artist.id}"class="text-decoration-none text-dark fw-semibold">
+                  ${track.artist.name}
+                  </a>
+                  </p>
+                  <p class="card-text">
+                  <small class="text-body-secondary">
+                  <a href="album.html?id=${track.album.id}" class="text-decoration-none text-secondary">
+                  ${track.album.title}
+                  </a>
+              </small>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>`
+    </div>`
       })
       const playTrack = document.querySelectorAll(".play-track")
       console.log(playTrack)

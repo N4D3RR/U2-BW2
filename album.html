@@ -459,16 +459,68 @@
         </div>
       </aside>
     </div>
+    <ul
+      id="bottom-navbar"
+      class="d-md-none nav d-flex fw-bold justify-content-between align-items-baseline pt-2"
+    >
+      <li class="nav-item">
+        <a
+          class="nav-link d-flex align-items-center text-white d-flex flex-column"
+          href="index.html"
+          ><i class="bi bi-house-door-fill me-2"></i>Home</a
+        >
+      </li>
+      <!--RICERCA-->
+      <li class="nav-item dropdown-center pb-0">
+        <a
+          class="p-0 ps-3 pe-2 py-1 text-decoration-none text-light d-flex flex-column"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="btn p-0 bi bi-search text-light"></i>
+          <p class="fw-bold d-inline-block ps-2">Cerca</p>
+        </a>
+        <ul class="dropdown-menu bg-dark">
+          <li>
+            <form class="d-flex" role="search" id="search-form-bottom">
+              <input
+                id="search-input-bottom"
+                class="form-control me-2 w-100"
+                type="search"
+                placeholder="Cerca"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Cerca
+              </button>
+            </form>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item mb-3">
+        <a
+          class="nav-link d-flex align-items-center text-secondary pt-0 d-flex flex-column"
+          href="#"
+          ><i class="bi bi-collection me-2"></i>La tua libreria</a
+        >
+      </li>
+    </ul>
 
     <footer
       id="player"
       class="bg-dark text-white fixed-bottom border-top border-secondary d-none"
     >
-      <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center justify-content-md-between">
         <div class="mw-100 text-white d-flex align-items-center">
-          <img id="footer-img" src="" alt="album-cover" class="img-fluid" />
+          <img
+            id="footer-img"
+            src=""
+            alt="album-cover"
+            class="img-fluid d-none d-md-flex"
+          />
           <div class="ms-2 d-flex align-items-center">
-            <div class="d-inline-block d-none d-md-block">
+            <div id="footer-track-artist-title" class="d-inline-block">
               <span id="footer-track-title"></span> <br /><span
                 id="footer-track-artist"
               ></span>
@@ -478,13 +530,13 @@
             </button>
           </div>
         </div>
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-md-column">
           <div class="d-flex align-items-center">
             <button class="btn btn-link text-white">
-              <i class="bi bi-shuffle"></i>
+              <i class="bi bi-shuffle d-none d-sm-block"></i>
             </button>
             <button class="btn btn-link text-white">
-              <i class="bi bi-skip-start-fill"></i>
+              <i class="bi bi-skip-start-fill d-none d-sm-block"></i>
             </button>
             <i
               id="play"
@@ -497,17 +549,20 @@
               onclick="playPause()"
             ></i>
             <button class="btn btn-link text-white">
-              <i class="bi bi-skip-end-fill"></i>
+              <i class="bi bi-skip-end-fill d-none d-sm-block"></i>
             </button>
             <button class="btn btn-link text-white">
-              <i class="bi bi-repeat"></i>
+              <i class="bi bi-repeat d-none d-sm-block"></i>
             </button>
           </div>
           <div
             class="d-flex align-items-center justify-content-center text-white gap-2"
           >
             <span id="time" class="small">0:00</span>
-            <div class="progress flex-grow-1 bg-secondary" style="height: 4px">
+            <div
+              class="progress flex-grow-1 bg-secondary d-none d-sm-flex"
+              style="height: 4px"
+            >
               <div
                 id="progress-bar"
                 class="progress-bar bg-white"
@@ -521,7 +576,7 @@
             <span id="track-duration" class="small"></span>
           </div>
         </div>
-        <div class="d-flex align-items-center d-none d-sm-flex">
+        <div class="d-flex align-items-center d-none d-md-flex">
           <button class="btn btn-link text-white">
             <i class="bi bi-mic"></i>
           </button>

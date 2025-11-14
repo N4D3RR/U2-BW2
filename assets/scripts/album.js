@@ -13,6 +13,7 @@ const artistImg = document.getElementById("artist-img")
 
 const audio = document.getElementById("audio-player")
 const progressBar = document.getElementById("progress-bar")
+const bgHero = document.getElementById("artist-header")
 
 // FUNZIONE AVANZAMENTO PROGRESSBAR
 
@@ -81,6 +82,7 @@ const fetchAlbumData = (id) => {
       // HEADER
       albumCover.src = album.cover_big
       albumTitle.textContent = album.title
+      bgHero.style = `background-image: url(${album.artist.picture_xl}); background-size:cover; background-repeat: no-repeat;`
 
       // ARTISTA
       albumDetails.innerHTML = `<b>${album.artist.name}</b> • ${

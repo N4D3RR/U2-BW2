@@ -73,3 +73,7 @@ a p {
   z-index: 500;
   background: #000000;
 }
+
+#album-details {
+  cursor: pointer;
+}

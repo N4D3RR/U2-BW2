@@ -826,26 +826,28 @@
             id="footer-img"
             src=""
             alt="album-cover"
-            class="img-fluid d-none d-md-block"
+            class="img-fluid d-none d-md-flex"
           />
           <div class="ms-2 d-flex align-items-center">
-            <div class="d-inline-block d-none d-md-block">
-              <span id="footer-track-title"></span> <br /><span
-                id="footer-track-artist"
-              ></span>
+            <div
+              id="footer-track-artist-title"
+              class="d-inline-block text-truncate"
+            >
+              <span id="footer-track-title"></span>
+              <br /><span id="footer-track-artist"></span>
             </div>
-            <button class="btn btn-link text-white">
+            <button class="btn btn-link text-white d-none d-md-flex">
               <i class="bi bi-heart"></i>
             </button>
           </div>
         </div>
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-md-column">
           <div class="d-flex align-items-center">
-            <button class="btn btn-link text-white">
-              <i class="bi bi-shuffle"></i>
+            <button class="btn btn-link text-white d-none d-md-block">
+              <i class="bi bi-shuffle d-none d-md-block"></i>
             </button>
-            <button class="btn btn-link text-white">
-              <i class="bi bi-skip-start-fill"></i>
+            <button class="btn btn-link text-white d-none d-md-block">
+              <i class="bi bi-skip-start-fill d-none d-md-block"></i>
             </button>
             <i
               id="play"
@@ -857,21 +859,24 @@
               class="btn btn-link text-light bi bi-pause-circle-fill fs-2"
               onclick="playPause()"
             ></i>
-            <button class="btn btn-link text-white">
-              <i class="bi bi-skip-end-fill"></i>
+            <button class="btn btn-link text-white d-none d-md-block">
+              <i class="bi bi-skip-end-fill d-none d-md-block"></i>
             </button>
-            <button class="btn btn-link text-white">
-              <i class="bi bi-repeat"></i>
+            <button class="btn btn-link text-white d-none d-md-block">
+              <i class="bi bi-repeat d-none d-sm-block"></i>
             </button>
           </div>
           <div
             class="d-flex align-items-center justify-content-center text-white gap-2"
           >
-            <span id="time" class="small">0:00</span>
-            <div class="progress flex-grow-1 bg-secondary" style="height: 4px">
+            <span id="time" class="small d-none d-md-block">0:00</span>
+            <div
+              class="progress flex-grow-1 bg-secondary d-none d-sm-flex"
+              style="height: 4px"
+            >
               <div
                 id="progress-bar"
-                class="progress-bar bg-white"
+                class="progress-bar bg-white d-none d-md-block"
                 role="progressbar"
                 style="width: 0%"
                 aria-valuenow="25"
@@ -879,10 +884,10 @@
                 aria-valuemax="100"
               ></div>
             </div>
-            <span id="track-duration" class="small"></span>
+            <span id="track-duration" class="small d-none d-md-block"></span>
           </div>
         </div>
-        <div class="d-flex align-items-center d-none d-sm-flex">
+        <div class="d-flex align-items-center d-none d-md-flex">
           <button class="btn btn-link text-white">
             <i class="bi bi-mic"></i>
           </button>
@@ -893,7 +898,7 @@
             <i class="bi bi-speaker"></i>
           </button>
           <button
-            class="btn btn-link text-white d-flex align-items-center gap-2 p-0"
+            class="btn btn-link text-white d-flex align-items-center gap-2 p-0 d-none d-md-block"
           >
             <i class="bi bi-volume-up-fill text-white fs-4"></i>
             <div
@@ -910,7 +915,7 @@
               ></div>
             </div>
           </button>
-          <button class="btn btn-link text-white">
+          <button class="btn btn-link text-white d-none d-md-block">
             <i class="bi bi-arrows-angle-expand"></i>
           </button>
         </div>

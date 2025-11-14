@@ -38,3 +38,15 @@ bell.addEventListener("click", () => {
   bell.classList.toggle("bi-bell")
   bell.classList.toggle("bi-bell-fill")
 })
+const annuncio = document.getElementById("annuncio")
+const hideBtn = document.getElementById("hideBtn")
+const restoreDiv = document.getElementById("restoreDiv")
+hideBtn.addEventListener("click", function () {
+  annuncio.classList.remove("d-md-flex")
+  restoreDiv.classList.add("d-md-block")
+})
+const restoreBtn = document.getElementById("restoreBtn")
+restoreBtn.addEventListener("click", function () {
+  annuncio.classList.add("d-md-flex")
+  restoreDiv.classList.remove("d-md-block")
+})

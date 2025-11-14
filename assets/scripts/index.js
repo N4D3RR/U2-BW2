@@ -17,8 +17,8 @@ c1.forEach((card) => {
 
 const playPauseBtn = document.getElementById("play-btn")
 
-let pauseBtn = document.querySelector(".bi-pause-circle-fill")
-let playBtn = document.querySelector(".bi-play-circle-fill")
+const pauseBtn = document.querySelector(".bi-pause-circle-fill")
+const playBtn = document.querySelector(".bi-play-circle-fill")
 
 // playPauseBtn.addEventListener("click", () => {
 //   playBtn.classList.toggle("d-none")
@@ -37,4 +37,10 @@ const bell = document.getElementById("bell")
 bell.addEventListener("click", () => {
   bell.classList.toggle("bi-bell")
   bell.classList.toggle("bi-bell-fill")
+})
+
+const cerca = document.getElementById("cerca")
+cerca.addEventListener("click", () => {
+  cerca.classList.toggle("text-secondary")
+  cerca.classList.toggle("text-white")
 })

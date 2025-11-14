@@ -172,3 +172,9 @@ const fetchAlbumData = (id) => {
 }
 
 fetchAlbumData(albumId || 75621062)
+
+const cerca = document.getElementById("cerca")
+cerca.addEventListener("click", () => {
+  cerca.classList.toggle("text-secondary")
+  cerca.classList.toggle("text-white")
+})

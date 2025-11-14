@@ -168,3 +168,9 @@ followBtn.addEventListener("click", () => {
     followBtn.textContent = "FOLLOW"
   }
 })
+
+const cerca = document.getElementById("cerca")
+cerca.addEventListener("click", () => {
+  cerca.classList.toggle("text-secondary")
+  cerca.classList.toggle("text-white")
+})

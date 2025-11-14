@@ -333,7 +333,7 @@
             <div class="col col-9 ps-0">
               <div class="d-flex justify-content-between">
                 <small id="album" class="align-self-start mb-1">ALBUM</small>
-                <button type="button" class="btn border-0 bg-dark">
+                <button type="button" id="hideBtn" class="btn border-0 bg-dark">
                   <small class="text-secondary">NASCONDI ANNUNCI</small>
                 </button>
               </div>
@@ -367,6 +367,15 @@
             <div class="row my-4 align-items-center justify-content-between">
               <div class="col-4">
                 <h2 class="fw-bold">Buonasera</h2>
+              </div>
+              <div class="col-6 text-end d-none" id="restoreDiv">
+                <button
+                  type="button"
+                  id="restoreBtn"
+                  class="btn border-0 bg-dark"
+                >
+                  <small class="text-secondary">RIPRISTINA ANNUNCI</small>
+                </button>
               </div>
               <div class="col-4 row d-md-none">
                 <h4 class="fw-bold text-end col-4">
@@ -897,7 +906,7 @@
               <span id="footer-track-title"></span>
               <br /><span id="footer-track-artist"></span>
             </div>
-            <button class="btn btn-link text-white d-none d-md-flex">
+            <button class="btn btn-link text-white d-md-flex">
               <i class="bi bi-heart"></i>
             </button>
           </div>

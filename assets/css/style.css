@@ -58,3 +58,22 @@ a p {
   width: 75vw;
   text-align: center;
 }
+
+#player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+#bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 500;
+  background: #000000;
+}
+
+#album-details {
+  cursor: pointer;
+}

@@ -15,20 +15,32 @@ c1.forEach((card) => {
 
 // play e pausa
 
-const playPauseBtn = document.getElementById("play-btn")
+const footerNavbar = document.getElementById("bottom-navbar")
 
+const playPauseBtn = document.getElementById("play-btn")
 const pauseBtn = document.querySelector(".bi-pause-circle-fill")
 const playBtn = document.querySelector(".bi-play-circle-fill")
 
 playPause = () => {
   playBtn.classList.toggle("d-none")
-
   pauseBtn.classList.toggle("d-none")
 }
 const bell = document.getElementById("bell")
 bell.addEventListener("click", () => {
   bell.classList.toggle("bi-bell")
   bell.classList.toggle("bi-bell-fill")
+})
+const annuncio = document.getElementById("annuncio")
+const hideBtn = document.getElementById("hideBtn")
+const restoreDiv = document.getElementById("restoreDiv")
+hideBtn.addEventListener("click", function () {
+  annuncio.classList.remove("d-md-flex")
+  restoreDiv.classList.add("d-md-block")
+})
+const restoreBtn = document.getElementById("restoreBtn")
+restoreBtn.addEventListener("click", function () {
+  annuncio.classList.add("d-md-flex")
+  restoreDiv.classList.remove("d-md-block")
 })
 
 const cerca = document.getElementById("cerca")
